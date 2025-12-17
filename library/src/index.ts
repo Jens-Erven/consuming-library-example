@@ -5,9 +5,6 @@ import './styles.css';
 export { Button } from './components/Button';
 export type { ButtonProps } from './components/Button';
 
-export { MaterialButton } from './components/MaterialButton';
-export type { MaterialButtonProps } from './components/MaterialButton';
-
 export { ThemeSelector } from './components/ThemeSelector';
 export type { ThemeSelectorProps } from './components/ThemeSelector';
 
