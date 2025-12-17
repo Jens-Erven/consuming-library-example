@@ -12,8 +12,8 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@jens-erven/fe-lib": "file:../library/jens-erven-fe-lib-0.0.1.tgz",
     "@mui/material": "^7.3.6",
+    "@portima/fe-lib": "file:../library/portima-fe-lib-0.0.1.tgz",
     "@tailwindcss/vite": "^4.1.18",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

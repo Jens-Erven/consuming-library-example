@@ -1,4 +1,3 @@
-import { MaterialButton, ThemeModeToggle, ThemeSelector } from "@jens-erven/fe-lib";
 import {
   AppBar,
   Box,
@@ -12,6 +11,7 @@ import {
   Toolbar,
   Typography
 } from "@mui/material";
+import { MaterialButton, ThemeModeToggle, ThemeSelector } from "@portima/fe-lib";
 import { TestTokensAndCSS } from "./TestTokensAndCSS";
 
 function App() {

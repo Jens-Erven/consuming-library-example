@@ -31,6 +31,6 @@ export type { AppThemeProviderProps, ThemeContextType } from './providers';
 
 // Note: Design tokens (TypeScript and CSS) are available via package.json exports
 // Import them directly:
-// import * as oceanLight from '@jens-erven/fe-lib/tokens/ocean/light';
-// import '@jens-erven/fe-lib/css/ocean/light';
+// import * as oceanLight from '@portima/fe-lib/tokens/ocean/light';
+// import '@portima/fe-lib/css/ocean/light';
 

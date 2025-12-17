@@ -1,13 +1,13 @@
 # Theme Usage Guide
 
-Complete guide for using themes with `@jens-erven/fe-lib` - from quick setup to advanced customization.
+Complete guide for using themes with `@portima/fe-lib` - from quick setup to advanced customization.
 
 ---
 
 ## 📦 Installation
 
 ```bash
-npm install @jens-erven/fe-lib @mui/material @emotion/react @emotion/styled
+npm install @portima/fe-lib @mui/material @emotion/react @emotion/styled
 ```
 
 ---
@@ -15,7 +15,7 @@ npm install @jens-erven/fe-lib @mui/material @emotion/react @emotion/styled
 ## 🚀 Quick Start (2 minutes)
 
 ```typescript
-import { AppThemeProvider, ThemeSelector, ThemeModeToggle } from '@jens-erven/fe-lib';
+import { AppThemeProvider, ThemeSelector, ThemeModeToggle } from '@portima/fe-lib';
 
 function App() {
   return (
@@ -70,7 +70,7 @@ import {
   AppThemeProvider,
   ThemeSelector,
   ThemeModeToggle
-} from '@jens-erven/fe-lib';
+} from '@portima/fe-lib';
 import { AppBar, Toolbar, Typography, Stack } from '@mui/material';
 
 function App() {
@@ -142,7 +142,7 @@ function App() {
 ### Setup
 
 ```typescript
-import { AppThemeProvider, useAppTheme } from '@jens-erven/fe-lib';
+import { AppThemeProvider, useAppTheme } from '@portima/fe-lib';
 import { Button, IconButton, ButtonGroup } from '@mui/material';
 
 // 1. Wrap app with provider
@@ -285,7 +285,7 @@ function SettingsPage() {
 ### Setup
 
 ```typescript
-import { AppThemeProvider } from '@jens-erven/fe-lib';
+import { AppThemeProvider } from '@portima/fe-lib';
 import { ThemeOptions } from '@mui/material/styles';
 
 // Define your customizations
@@ -348,7 +348,7 @@ function App() {
 
 ```typescript
 import { ThemeProvider } from '@mui/material/styles';
-import { oceanLightTheme } from '@jens-erven/fe-lib';
+import { oceanLightTheme } from '@portima/fe-lib';
 
 function App() {
   return (
@@ -364,7 +364,7 @@ function App() {
 
 ```typescript
 import { ThemeProvider } from '@mui/material/styles';
-import { themes } from '@jens-erven/fe-lib';
+import { themes } from '@portima/fe-lib';
 import { useState } from 'react';
 
 function App() {
@@ -391,7 +391,7 @@ function App() {
 
 ```typescript
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { oceanLightTheme } from '@jens-erven/fe-lib';
+import { oceanLightTheme } from '@portima/fe-lib';
 
 const customTheme = createTheme(oceanLightTheme, {
   components: {
@@ -423,14 +423,14 @@ import {
   sunsetDarkTheme,
   forestLightTheme,
   forestDarkTheme,
-} from "@jens-erven/fe-lib";
+} from "@portima/fe-lib";
 
 // Structured object
-import { themes } from "@jens-erven/fe-lib";
+import { themes } from "@portima/fe-lib";
 // themes.ocean.light, themes.ocean.dark, etc.
 
 // Flat object (good for dropdowns)
-import { allThemes } from "@jens-erven/fe-lib";
+import { allThemes } from "@portima/fe-lib";
 // allThemes['Ocean Light'], allThemes['Ocean Dark'], etc.
 ```
 
@@ -448,9 +448,9 @@ import { allThemes } from "@jens-erven/fe-lib";
 
 ```typescript
 // In main.tsx or App.tsx
-import "@jens-erven/fe-lib/css/ocean/light"; // Import one theme
+import "@portima/fe-lib/css/ocean/light"; // Import one theme
 // OR
-import "@jens-erven/fe-lib/css/tailwind"; // Import all themes
+import "@portima/fe-lib/css/tailwind"; // Import all themes
 ```
 
 ### Use in CSS
@@ -492,7 +492,7 @@ import "@jens-erven/fe-lib/css/tailwind"; // Import all themes
 
 ```typescript
 // Import Tailwind CSS
-import '@jens-erven/fe-lib/css/tailwind';
+import '@portima/fe-lib/css/tailwind';
 
 // Use in JSX
 <div className="theme-theme-ocean">
@@ -663,5 +663,5 @@ Dark:  primary: '#52b788', secondary: '#74c69d', bg: '#081c15'
 
 **Questions or Issues?**
 
-- � [Report Issue](https://github.com/jens-erven/fe-lib/issues)
-- 💬 [Discussions](https://github.com/jens-erven/fe-lib/discussions)
+- � [Report Issue](https://github.com/portima/fe-lib/issues)
+- 💬 [Discussions](https://github.com/portima/fe-lib/discussions)

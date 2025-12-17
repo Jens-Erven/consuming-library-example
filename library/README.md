@@ -1,8 +1,8 @@
-# @jens-erven/fe-lib
+# @portima/fe-lib
 
 A comprehensive React component library with Material-UI theming, design tokens, and flexible theme switching capabilities.
 
-[![npm version](https://badge.fury.io/js/%40jens-erven%2Ffe-lib.svg)](https://www.npmjs.com/package/@jens-erven/fe-lib)
+[![npm version](https://badge.fury.io/js/%40portima%2Ffe-lib.svg)](https://www.npmjs.com/package/@portima/fe-lib)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
@@ -26,7 +26,7 @@ A comprehensive React component library with Material-UI theming, design tokens,
 ## 📦 Installation
 
 ```bash
-npm install @jens-erven/fe-lib @mui/material @emotion/react @emotion/styled
+npm install @portima/fe-lib @mui/material @emotion/react @emotion/styled
 ```
 
 ### Peer Dependencies
@@ -48,7 +48,7 @@ import {
   AppThemeProvider,
   ThemeSelector,
   ThemeModeToggle
-} from '@jens-erven/fe-lib';
+} from '@portima/fe-lib';
 
 function App() {
   return (
@@ -83,7 +83,7 @@ import {
   forestDarkTheme,
   themes, // Structured object
   allThemes, // Flat object
-} from "@jens-erven/fe-lib";
+} from "@portima/fe-lib";
 ```
 
 **When to use:**
@@ -105,7 +105,7 @@ import {
 React Context-based theme management:
 
 ```typescript
-import { AppThemeProvider, useAppTheme } from '@jens-erven/fe-lib';
+import { AppThemeProvider, useAppTheme } from '@portima/fe-lib';
 
 // Wrap your app
 <AppThemeProvider>
@@ -141,7 +141,7 @@ function MyComponent() {
 Ready-to-use Material-UI components for theme control:
 
 ```typescript
-import { ThemeSelector, ThemeModeToggle } from '@jens-erven/fe-lib';
+import { ThemeSelector, ThemeModeToggle } from '@portima/fe-lib';
 
 // Theme dropdown
 <ThemeSelector size="small" width={150} />
@@ -170,7 +170,7 @@ import { ThemeSelector, ThemeModeToggle } from '@jens-erven/fe-lib';
 Raw token values for custom styling:
 
 ```typescript
-import * as oceanLight from "@jens-erven/fe-lib/tokens/ocean/light";
+import * as oceanLight from "@portima/fe-lib/tokens/ocean/light";
 
 // Use in styled-components
 const Button = styled.button`
@@ -200,7 +200,7 @@ CSS custom properties for each theme:
 
 ```typescript
 // Import CSS file
-import '@jens-erven/fe-lib/css/ocean/light';
+import '@portima/fe-lib/css/ocean/light';
 
 // Use in CSS
 .my-component {
@@ -219,12 +219,12 @@ import '@jens-erven/fe-lib/css/ocean/light';
 
 **Available imports:**
 
-- `@jens-erven/fe-lib/css/ocean/light`
-- `@jens-erven/fe-lib/css/ocean/dark`
-- `@jens-erven/fe-lib/css/sunset/light`
-- `@jens-erven/fe-lib/css/sunset/dark`
-- `@jens-erven/fe-lib/css/forest/light`
-- `@jens-erven/fe-lib/css/forest/dark`
+- `@portima/fe-lib/css/ocean/light`
+- `@portima/fe-lib/css/ocean/dark`
+- `@portima/fe-lib/css/sunset/light`
+- `@portima/fe-lib/css/sunset/dark`
+- `@portima/fe-lib/css/forest/light`
+- `@portima/fe-lib/css/forest/dark`
 
 ---
 
@@ -234,7 +234,7 @@ Pre-built Tailwind CSS with theme classes:
 
 ```typescript
 // Import Tailwind CSS
-import '@jens-erven/fe-lib/css/tailwind';
+import '@portima/fe-lib/css/tailwind';
 
 // Use theme classes in JSX
 <div className="theme-theme-ocean">
@@ -268,7 +268,7 @@ import '@jens-erven/fe-lib/css/tailwind';
 Basic UI components (more coming soon):
 
 ```typescript
-import { Button, MaterialButton } from '@jens-erven/fe-lib';
+import { Button, MaterialButton } from '@portima/fe-lib';
 
 <Button variant="primary" size="md">Click me</Button>
 <MaterialButton variant="contained" color="primary">MUI Button</MaterialButton>
@@ -286,7 +286,7 @@ import { Button, MaterialButton } from '@jens-erven/fe-lib';
 ## 📁 Package Structure
 
 ```
-@jens-erven/fe-lib/
+@portima/fe-lib/
 ├── dist/
 │   ├── index.js              # Main bundle (ESM)
 │   ├── index.cjs             # CommonJS bundle
@@ -306,13 +306,13 @@ import { Button, MaterialButton } from '@jens-erven/fe-lib';
 │           └── app.css       # Tailwind CSS with all themes
 │
 └── Package exports:
-    ├── @jens-erven/fe-lib                    # Main package
-    ├── @jens-erven/fe-lib/styles.css         # Component styles
-    ├── @jens-erven/fe-lib/tokens/*/light     # TypeScript tokens
-    ├── @jens-erven/fe-lib/tokens/*/dark      # TypeScript tokens
-    ├── @jens-erven/fe-lib/css/*/light        # CSS variables
-    ├── @jens-erven/fe-lib/css/*/dark         # CSS variables
-    └── @jens-erven/fe-lib/css/tailwind       # Tailwind CSS
+    ├── @portima/fe-lib                    # Main package
+    ├── @portima/fe-lib/styles.css         # Component styles
+    ├── @portima/fe-lib/tokens/*/light     # TypeScript tokens
+    ├── @portima/fe-lib/tokens/*/dark      # TypeScript tokens
+    ├── @portima/fe-lib/css/*/light        # CSS variables
+    ├── @portima/fe-lib/css/*/dark         # CSS variables
+    └── @portima/fe-lib/css/tailwind       # Tailwind CSS
 ```
 
 ---
@@ -326,7 +326,7 @@ import { Button, MaterialButton } from '@jens-erven/fe-lib';
 **Solution:**
 
 ```typescript
-import { AppThemeProvider, ThemeSelector, ThemeModeToggle } from '@jens-erven/fe-lib';
+import { AppThemeProvider, ThemeSelector, ThemeModeToggle } from '@portima/fe-lib';
 
 <AppThemeProvider defaultTheme="ocean">
   <Dashboard>
@@ -349,7 +349,7 @@ import { AppThemeProvider, ThemeSelector, ThemeModeToggle } from '@jens-erven/fe
 **Solution:**
 
 ```typescript
-import { AppThemeProvider, useAppTheme } from '@jens-erven/fe-lib';
+import { AppThemeProvider, useAppTheme } from '@portima/fe-lib';
 
 <AppThemeProvider
   defaultTheme="sunset"
@@ -380,7 +380,7 @@ import { AppThemeProvider, useAppTheme } from '@jens-erven/fe-lib';
 **Solution:**
 
 ```typescript
-import { AppThemeProvider, useAppTheme } from '@jens-erven/fe-lib';
+import { AppThemeProvider, useAppTheme } from '@portima/fe-lib';
 import { IconButton } from '@mui/material';
 
 function ThemeToggle() {
@@ -405,13 +405,13 @@ function ThemeToggle() {
 
 ```typescript
 // In React apps
-import { themes } from '@jens-erven/fe-lib';
+import { themes } from '@portima/fe-lib';
 
 // In Vue/Svelte/Angular apps
-import '@jens-erven/fe-lib/css/ocean/light';
+import '@portima/fe-lib/css/ocean/light';
 
 // In plain HTML/CSS
-<link rel="stylesheet" href="node_modules/@jens-erven/fe-lib/css/ocean/light.css">
+<link rel="stylesheet" href="node_modules/@portima/fe-lib/css/ocean/light.css">
 ```
 
 **Why:** Framework-agnostic CSS variables, raw tokens for any styling solution.
@@ -425,7 +425,7 @@ import '@jens-erven/fe-lib/css/ocean/light';
 **Solution:**
 
 ```typescript
-import { AppThemeProvider, useAppTheme } from '@jens-erven/fe-lib';
+import { AppThemeProvider, useAppTheme } from '@portima/fe-lib';
 
 function SettingsPage() {
   const { themeName, mode, setTheme, setMode } = useAppTheme();
@@ -454,7 +454,7 @@ function SettingsPage() {
 **Solution:**
 
 ```typescript
-import { themes } from '@jens-erven/fe-lib';
+import { themes } from '@portima/fe-lib';
 import { ThemeProvider } from '@mui/material/styles';
 
 // Use in Storybook or component development
@@ -644,7 +644,7 @@ import type {
   AppThemeProviderProps,
   ThemeSelectorProps,
   ThemeModeToggleProps,
-} from "@jens-erven/fe-lib";
+} from "@portima/fe-lib";
 ```
 
 ---
@@ -753,19 +753,19 @@ After building, consuming applications can use:
 
 ```typescript
 // 1. TypeScript Tokens
-import * as oceanLight from "@jens-erven/fe-lib/tokens/ocean/light";
+import * as oceanLight from "@portima/fe-lib/tokens/ocean/light";
 
 // 2. CSS Variables
-import "@jens-erven/fe-lib/css/ocean/light";
+import "@portima/fe-lib/css/ocean/light";
 
 // 3. Tailwind CSS
-import "@jens-erven/fe-lib/css/tailwind";
+import "@portima/fe-lib/css/tailwind";
 
 // 4. Material-UI Themes
-import { oceanLightTheme } from "@jens-erven/fe-lib";
+import { oceanLightTheme } from "@portima/fe-lib";
 
 // 5. Provider & Components
-import { AppThemeProvider, ThemeSelector } from "@jens-erven/fe-lib";
+import { AppThemeProvider, ThemeSelector } from "@portima/fe-lib";
 ```
 
 ### Workflow: Updating Design Tokens
@@ -784,7 +784,7 @@ npm run storybook
 # 4. Test in consuming app
 npm pack
 cd ../consuming-app
-npm install ../library/jens-erven-fe-lib-0.0.1.tgz
+npm install ../library/portima-fe-lib-0.0.1.tgz
 
 # 5. Publish to npm (when ready)
 npm version patch
@@ -845,7 +845,7 @@ npm run build
 
 - CSS import errors are expected and safe to ignore
 - Vite handles CSS imports at runtime
-- Optionally add type declaration: `declare module '@jens-erven/fe-lib/css/*';`
+- Optionally add type declaration: `declare module '@portima/fe-lib/css/*';`
 
 ---
 
@@ -857,7 +857,7 @@ Contributions are welcome! Please read our [Contributing Guide](./CONTRIBUTING.m
 
 ## 📄 License
 
-MIT © [Jens Erven](https://github.com/jens-erven)
+MIT © [Jens Erven](https://github.com/portima)
 
 ---
 
@@ -872,9 +872,9 @@ MIT © [Jens Erven](https://github.com/jens-erven)
 
 ## 🔗 Links
 
-- [GitHub Repository](https://github.com/jens-erven/fe-lib)
-- [NPM Package](https://www.npmjs.com/package/@jens-erven/fe-lib)
-- [Report Issues](https://github.com/jens-erven/fe-lib/issues)
+- [GitHub Repository](https://github.com/portima/fe-lib)
+- [NPM Package](https://www.npmjs.com/package/@portima/fe-lib)
+- [Report Issues](https://github.com/portima/fe-lib/issues)
 
 ---
 

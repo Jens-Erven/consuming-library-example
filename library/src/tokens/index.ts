@@ -7,12 +7,12 @@
  * 
  * @example TypeScript Tokens
  * ```typescript
- * import * as oceanLight from '@jens-erven/fe-lib/tokens/ocean/light';
+ * import * as oceanLight from '@portima/fe-lib/tokens/ocean/light';
  * ```
  * 
  * @example CSS Variables
  * ```typescript
- * import '@jens-erven/fe-lib/css/ocean/light';
+ * import '@portima/fe-lib/css/ocean/light';
  * ```
  * 
  * See TOKENS.md for complete documentation.

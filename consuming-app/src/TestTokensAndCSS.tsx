@@ -1,7 +1,7 @@
 // Test 1: Import TypeScript tokens
-import * as forestLight from "@jens-erven/fe-lib/tokens/forest/light";
-import * as oceanLight from "@jens-erven/fe-lib/tokens/ocean/light";
-import * as sunsetDark from "@jens-erven/fe-lib/tokens/sunset/dark";
+import * as forestLight from "@portima/fe-lib/tokens/forest/light";
+import * as oceanLight from "@portima/fe-lib/tokens/ocean/light";
+import * as sunsetDark from "@portima/fe-lib/tokens/sunset/dark";
 
 // Test 2: Import CSS variables (need to be imported in a CSS-aware way)
 // Import in index.css or main.tsx instead, or use require
@@ -15,7 +15,7 @@ export function TestTokensAndCSS() {
       <div style={{ marginTop: "20px" }}>
         <h3>✅ 1. TypeScript Tokens Work!</h3>
         <p style={{ fontSize: "14px", color: "#666" }}>
-          Imported from: <code>@jens-erven/fe-lib/tokens/ocean/light</code>
+          Imported from: <code>@portima/fe-lib/tokens/ocean/light</code>
         </p>
         <div
           style={{
@@ -115,7 +115,7 @@ export function TestTokensAndCSS() {
                 marginTop: "5px",
               }}
             >
-              import '@jens-erven/fe-lib/css/forest/light';
+              import '@portima/fe-lib/css/forest/light';
             </pre>
             Then use: <code>var(--primary)</code>, <code>var(--secondary)</code>
             , etc.
@@ -129,7 +129,7 @@ export function TestTokensAndCSS() {
                 marginTop: "5px",
               }}
             >
-              import '@jens-erven/fe-lib/css/tailwind';
+              import '@portima/fe-lib/css/tailwind';
             </pre>
             Then use classes: <code>bg-primary</code>,{" "}
             <code>text-primary-contrast</code>, etc.

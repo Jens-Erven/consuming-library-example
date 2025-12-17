@@ -1,4 +1,4 @@
-import { AppThemeProvider } from "@jens-erven/fe-lib";
+import { AppThemeProvider } from "@portima/fe-lib";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
