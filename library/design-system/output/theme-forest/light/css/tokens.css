@@ -1,0 +1,16 @@
+:root {
+  --primary: #2d6a4f;
+  --primary-contrast: #ffffff;
+  --secondary: #52b788;
+  --secondary-contrast: #ffffff;
+  --background-default: #f1f8f4;
+  --background-paper: #ffffff;
+  --text-primary: #1b4332;
+  --text-secondary: #40916c;
+  --error: #c62828;
+  --warning: #f57c00;
+  --info: #0288d1;
+  --success: #2e7d32;
+  --spacing-unit: 0.5rem;
+  --border-radius: 0.25rem;
+}

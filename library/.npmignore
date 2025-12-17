@@ -1,0 +1,23 @@
+# Source files (only ship dist/)
+src/
+*.ts
+!*.d.ts
+
+# Config files
+tsconfig.json
+vite.config.ts
+
+# Development files
+.vscode/
+.idea/
+*.log
+
+# Tests (when you add them)
+__tests__/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Documentation (optional - include if you want)
+README.md

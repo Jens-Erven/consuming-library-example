@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* Import all theme definitions */
+@import "./theme-ocean.css";
+@import "./theme-sunset.css";
+@import "./theme-forest.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Disable all default Tailwind utilities */
+@theme {
+  --color-*: initial;
+}
+
+/* Map theme tokens to Tailwind-prefixed CSS variables for custom utilities */
+@theme inline {
+    --color-primary: var(--primary);
+    --color-primary-contrast: var(--primary-contrast);
+    --color-secondary: var(--secondary);
+    --color-secondary-contrast: var(--secondary-contrast);
+    --color-bg-default: var(--background-default);
+    --color-bg-paper: var(--background-paper);
+    --color-text-primary: var(--text-primary);
+    --color-text-primary: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-secondary: var(--text-secondary);
+    --color-error: var(--error);
+    --color-warning: var(--warning);
+    --color-info: var(--info);
+    --color-success: var(--success);
+    --spacing-unit: var(--spacing-unit);
+    --radius-default: var(--border-radius);
+}
