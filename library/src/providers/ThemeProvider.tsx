@@ -1,6 +1,6 @@
 /**
  * Theme Provider Wrapper
- * 
+ *
  * A convenient wrapper around Material-UI's ThemeProvider that adds:
  * - Built-in theme switching (ocean, sunset, forest)
  * - Light/Dark mode toggle
@@ -8,16 +8,27 @@
  * - System preference detection
  * - Easy-to-use React Context API
  * - Tailwind CSS v4 integration (CSS layers configured automatically)
- * 
+ *
  * @module providers/ThemeProvider
  */
 
-import { createContext, useContext, useState, useEffect, useMemo, ReactNode } from 'react';
-import { ThemeProvider as MuiThemeProvider, createTheme, StyledEngineProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import { themes, type ThemeName, type ThemeMode } from '../themes';
-import type { ThemeOptions } from '@mui/material/styles';
+import CssBaseline from "@mui/material/CssBaseline";
+import GlobalStyles from "@mui/material/GlobalStyles";
+import type { ThemeOptions } from "@mui/material/styles";
+import {
+  createTheme,
+  ThemeProvider as MuiThemeProvider,
+  StyledEngineProvider,
+} from "@mui/material/styles";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+import { themes, type ThemeMode, type ThemeName } from "../themes";
 
 // Context type definition
 interface ThemeContextType {
@@ -58,19 +69,19 @@ interface AppThemeProviderProps {
   enableTailwindIntegration?: boolean;
 }
 
-const STORAGE_THEME_KEY = 'theme-name';
-const STORAGE_MODE_KEY = 'theme-mode';
+const STORAGE_THEME_KEY = "theme-name";
+const STORAGE_MODE_KEY = "theme-mode";
 
 /**
  * Theme Provider Component
- * 
+ *
  * Wraps your application with Material-UI ThemeProvider and provides
  * convenient theme switching functionality.
- * 
+ *
  * @example
  * ```typescript
  * import { AppThemeProvider, ThemeSelector, ThemeModeToggle } from 'your-library';
- * 
+ *
  * function App() {
  *   return (
  *     <AppThemeProvider defaultTheme="ocean" defaultMode="light">
@@ -86,10 +97,10 @@ const STORAGE_MODE_KEY = 'theme-mode';
  */
 export function AppThemeProvider({
   children,
-  defaultTheme = 'ocean',
+  defaultTheme = "ocean",
   defaultMode,
   enablePersistence = true,
-  storageKey = 'app-theme',
+  storageKey = "app-theme",
   useSystemPreference = true,
   themeExtension,
   disableCssBaseline = false,
@@ -97,15 +108,17 @@ export function AppThemeProvider({
 }: AppThemeProviderProps) {
   // Detect system preference
   const getSystemPreference = (): ThemeMode => {
-    if (typeof window === 'undefined' || !useSystemPreference) {
-      return 'light';
+    if (typeof window === "undefined" || !useSystemPreference) {
+      return "light";
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
   };
 
   // Initialize theme from localStorage or defaults
   const getInitialTheme = (): ThemeName => {
-    if (!enablePersistence || typeof window === 'undefined') {
+    if (!enablePersistence || typeof window === "undefined") {
       return defaultTheme;
     }
     const stored = localStorage.getItem(`${storageKey}-${STORAGE_THEME_KEY}`);
@@ -113,7 +126,7 @@ export function AppThemeProvider({
   };
 
   const getInitialMode = (): ThemeMode => {
-    if (!enablePersistence || typeof window === 'undefined') {
+    if (!enablePersistence || typeof window === "undefined") {
       return defaultMode || getSystemPreference();
     }
     const stored = localStorage.getItem(`${storageKey}-${STORAGE_MODE_KEY}`);
@@ -126,7 +139,7 @@ export function AppThemeProvider({
 
   // Persist to localStorage
   useEffect(() => {
-    if (enablePersistence && typeof window !== 'undefined') {
+    if (enablePersistence && typeof window !== "undefined") {
       localStorage.setItem(`${storageKey}-${STORAGE_THEME_KEY}`, themeName);
       localStorage.setItem(`${storageKey}-${STORAGE_MODE_KEY}`, mode);
     }
@@ -134,19 +147,19 @@ export function AppThemeProvider({
 
   // Listen to system preference changes
   useEffect(() => {
-    if (!useSystemPreference || typeof window === 'undefined') {
+    if (!useSystemPreference || typeof window === "undefined") {
       return;
     }
 
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handler = (e: MediaQueryListEvent) => {
       if (!enablePersistence) {
-        setModeState(e.matches ? 'dark' : 'light');
+        setModeState(e.matches ? "dark" : "light");
       }
     };
 
-    mediaQuery.addEventListener('change', handler);
-    return () => mediaQuery.removeEventListener('change', handler);
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
   }, [useSystemPreference, enablePersistence]);
 
   // Theme switching functions
@@ -159,17 +172,17 @@ export function AppThemeProvider({
   };
 
   const toggleMode = () => {
-    setModeState(prev => prev === 'light' ? 'dark' : 'light');
+    setModeState((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   // Create the actual MUI theme with optional extensions
   const currentTheme = useMemo(() => {
     const baseTheme = themes[themeName][mode];
-    
+
     if (themeExtension) {
       return createTheme(baseTheme, themeExtension);
     }
-    
+
     return baseTheme;
   }, [themeName, mode, themeExtension]);
 
@@ -199,10 +212,10 @@ export function AppThemeProvider({
 
 /**
  * Hook to access theme context
- * 
+ *
  * @throws {Error} If used outside of AppThemeProvider
  * @returns {ThemeContextType} Theme context with current theme state and setters
- * 
+ *
  * @example
  * ```typescript
  * function MyComponent() {
@@ -213,13 +226,13 @@ export function AppThemeProvider({
  */
 export function useAppTheme(): ThemeContextType {
   const context = useContext(ThemeContext);
-  
+
   if (context === undefined) {
-    throw new Error('useAppTheme must be used within an AppThemeProvider');
+    throw new Error("useAppTheme must be used within an AppThemeProvider");
   }
-  
+
   return context;
 }
 
 // Re-export types for convenience
-export type { ThemeContextType, AppThemeProviderProps };
+export type { AppThemeProviderProps, ThemeContextType };

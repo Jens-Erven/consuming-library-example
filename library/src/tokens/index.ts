@@ -22,11 +22,12 @@
 // They are not re-exported here to avoid TypeScript compilation issues
 // Access them directly via the package exports defined in package.json
 
-export type { ThemeName, ThemeMode } from '../themes';
+export type { ThemeMode, ThemeName } from '../themes';
 
-export * as oceanLight from '../../design-system/output/theme-ocean/light/ts/tokens';
-export * as oceanDark from '../../design-system/output/theme-ocean/dark/ts/tokens';
-export * as sunsetLight from '../../design-system/output/theme-sunset/light/ts/tokens';
-export * as sunsetDark from '../../design-system/output/theme-sunset/dark/ts/tokens';
-export * as forestLight from '../../design-system/output/theme-forest/light/ts/tokens';
 export * as forestDark from '../../design-system/output/theme-forest/dark/ts/tokens';
+export * as forestLight from '../../design-system/output/theme-forest/light/ts/tokens';
+export * as oceanDark from '../../design-system/output/theme-ocean/dark/ts/tokens';
+export * as oceanLight from '../../design-system/output/theme-ocean/light/ts/tokens';
+export * as sunsetDark from '../../design-system/output/theme-sunset/dark/ts/tokens';
+export * as sunsetLight from '../../design-system/output/theme-sunset/light/ts/tokens';
+

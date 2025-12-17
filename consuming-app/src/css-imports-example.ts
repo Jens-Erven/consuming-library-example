@@ -17,4 +17,5 @@
 // - CSS Variables: var(--primary), var(--secondary), var(--background-default), etc.
 // - Tailwind Classes: bg-primary, text-primary-contrast, theme-theme-ocean, dark, etc.
 
-export {};
+export { };
+

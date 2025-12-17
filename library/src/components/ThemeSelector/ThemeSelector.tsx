@@ -1,15 +1,21 @@
 /**
  * Theme Selector Component
- * 
+ *
  * A Material-UI Select dropdown for choosing between themes.
  * Can be placed anywhere within AppThemeProvider.
- * 
+ *
  * @module components/ThemeSelector
  */
 
-import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from '@mui/material';
-import { useAppTheme } from '../../providers';
-import type { ThemeName } from '../../themes';
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+} from "@mui/material";
+import { useAppTheme } from "../../providers";
+import type { ThemeName } from "../../themes";
 
 export interface ThemeSelectorProps {
   /** Show label for the select (default: true) */
@@ -17,7 +23,7 @@ export interface ThemeSelectorProps {
   /** Label text (default: 'Theme') */
   label?: string;
   /** Size of the select (default: 'medium') */
-  size?: 'small' | 'medium';
+  size?: "small" | "medium";
   /** Custom width (default: 120) */
   width?: number | string;
   /** Additional sx props */
@@ -26,14 +32,14 @@ export interface ThemeSelectorProps {
 
 /**
  * Theme Selector Component
- * 
+ *
  * A Material-UI dropdown for selecting the current theme.
  * Must be used within AppThemeProvider.
- * 
+ *
  * @example
  * ```typescript
  * import { ThemeSelector } from 'your-library';
- * 
+ *
  * function Header() {
  *   return (
  *     <AppBar>
@@ -47,8 +53,8 @@ export interface ThemeSelectorProps {
  */
 export function ThemeSelector({
   showLabel = true,
-  label = 'Theme',
-  size = 'medium',
+  label = "Theme",
+  size = "medium",
   width = 120,
   sx = {},
 }: ThemeSelectorProps) {
