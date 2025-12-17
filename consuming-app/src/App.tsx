@@ -51,7 +51,6 @@ import {
   FormControl,
   FormControlLabel,
   FormLabel,
-  Grid,
   IconButton,
   InputLabel,
   LinearProgress,
@@ -93,9 +92,8 @@ import {
   Tooltip,
   Typography
 } from "@mui/material";
-import { ThemeModeToggle, ThemeSelector } from "@portima/fe-lib";
+import { ProfileCard, ThemeModeToggle, ThemeSelector } from "@portima/fe-lib";
 import { useState } from "react";
-import { TestTokensAndCSS } from "./TestTokensAndCSS";
 
 function App() {
   const [tabValue, setTabValue] = useState(0);
@@ -163,7 +161,6 @@ function App() {
             </Tooltip>
           </Stack>
         </Toolbar>
-        <LinearProgress variant="determinate" value={65} sx={{ height: 2 }} />
       </AppBar>
 
       {/* Main Content */}
@@ -234,6 +231,7 @@ function App() {
             <Tab label="Inputs & Forms" />
             <Tab label="Data Display" />
             <Tab label="Feedback & Navigation" />
+            <Tab label="Custom Components" />
           </Tabs>
         </Paper>
 
@@ -366,26 +364,20 @@ function App() {
               <Typography variant="h5" gutterBottom color="primary">
                 Text Fields
               </Typography>
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
+              <Stack spacing={3}>
+                <Stack direction={{ xs: 'column', md: 'row' }} spacing={3}>
                   <TextField fullWidth label="Standard" variant="standard" />
-                </Grid>
-                <Grid item xs={12} md={6}>
                   <TextField fullWidth label="Filled" variant="filled" />
-                </Grid>
-                <Grid item xs={12} md={6}>
+                </Stack>
+                <Stack direction={{ xs: 'column', md: 'row' }} spacing={3}>
                   <TextField fullWidth label="Outlined" variant="outlined" />
-                </Grid>
-                <Grid item xs={12} md={6}>
                   <TextField fullWidth label="Disabled" disabled variant="outlined" />
-                </Grid>
-                <Grid item xs={12} md={6}>
+                </Stack>
+                <Stack direction={{ xs: 'column', md: 'row' }} spacing={3}>
                   <TextField fullWidth label="Error" error helperText="This field has an error" variant="outlined" />
-                </Grid>
-                <Grid item xs={12} md={6}>
                   <TextField fullWidth label="With Helper Text" helperText="Some helpful information" variant="outlined" />
-                </Grid>
-                <Grid item xs={12} md={6}>
+                </Stack>
+                <Stack direction={{ xs: 'column', md: 'row' }} spacing={3}>
                   <TextField
                     fullWidth
                     label="Password"
@@ -399,8 +391,6 @@ function App() {
                       )
                     }}
                   />
-                </Grid>
-                <Grid item xs={12} md={6}>
                   <TextField
                     fullWidth
                     label="With Icon"
@@ -409,11 +399,9 @@ function App() {
                       startAdornment: <Search sx={{ mr: 1, color: 'text.secondary' }} />
                     }}
                   />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField fullWidth label="Multiline" multiline rows={4} variant="outlined" />
-                </Grid>
-              </Grid>
+                </Stack>
+                <TextField fullWidth label="Multiline" multiline rows={4} variant="outlined" />
+              </Stack>
             </Paper>
 
             {/* Select & Autocomplete */}
@@ -421,30 +409,27 @@ function App() {
               <Typography variant="h5" gutterBottom color="primary">
                 Select & Autocomplete
               </Typography>
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
-                  <FormControl fullWidth>
-                    <InputLabel>Select Option</InputLabel>
-                    <Select
-                      value={selectValue}
-                      label="Select Option"
-                      onChange={(e) => setSelectValue(e.target.value)}
-                    >
-                      <MenuItem value="option1">Option 1</MenuItem>
-                      <MenuItem value="option2">Option 2</MenuItem>
-                      <MenuItem value="option3">Option 3</MenuItem>
-                    </Select>
-                  </FormControl>
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <Autocomplete
-                    value={autocompleteValue}
-                    onChange={(_, newValue) => setAutocompleteValue(newValue)}
-                    options={autocompleteOptions}
-                    renderInput={(params) => <TextField {...params} label="Autocomplete" />}
-                  />
-                </Grid>
-              </Grid>
+              <Stack direction={{ xs: 'column', md: 'row' }} spacing={3}>
+                <FormControl fullWidth>
+                  <InputLabel>Select Option</InputLabel>
+                  <Select
+                    value={selectValue}
+                    label="Select Option"
+                    onChange={(e) => setSelectValue(e.target.value)}
+                  >
+                    <MenuItem value="option1">Option 1</MenuItem>
+                    <MenuItem value="option2">Option 2</MenuItem>
+                    <MenuItem value="option3">Option 3</MenuItem>
+                  </Select>
+                </FormControl>
+                <Autocomplete
+                  fullWidth
+                  value={autocompleteValue}
+                  onChange={(_, newValue) => setAutocompleteValue(newValue)}
+                  options={autocompleteOptions}
+                  renderInput={(params) => <TextField {...params} label="Autocomplete" />}
+                />
+              </Stack>
             </Paper>
 
             {/* Checkboxes, Radio, Switch */}
@@ -452,8 +437,8 @@ function App() {
               <Typography variant="h5" gutterBottom color="primary">
                 Selection Controls
               </Typography>
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={4}>
+              <Stack direction={{ xs: 'column', md: 'row' }} spacing={3}>
+                <Box sx={{ flex: 1 }}>
                   <Typography variant="body2" color="text.secondary" paragraph>
                     Checkboxes:
                   </Typography>
@@ -463,8 +448,8 @@ function App() {
                   <FormControlLabel control={<Checkbox defaultChecked color="success" />} label="Success" />
                   <FormControlLabel control={<Checkbox defaultChecked color="error" />} label="Error" />
                   <FormControlLabel control={<Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} />} label="Custom Icon" />
-                </Grid>
-                <Grid item xs={12} md={4}>
+                </Box>
+                <Box sx={{ flex: 1 }}>
                   <FormControl>
                     <FormLabel>Radio Group</FormLabel>
                     <RadioGroup value={radioValue} onChange={(e) => setRadioValue(e.target.value)}>
@@ -474,8 +459,8 @@ function App() {
                       <FormControlLabel value="option4" control={<Radio color="success" />} label="Option 4" />
                     </RadioGroup>
                   </FormControl>
-                </Grid>
-                <Grid item xs={12} md={4}>
+                </Box>
+                <Box sx={{ flex: 1 }}>
                   <Typography variant="body2" color="text.secondary" paragraph>
                     Switches:
                   </Typography>
@@ -484,8 +469,8 @@ function App() {
                   <FormControlLabel control={<Switch defaultChecked color="secondary" />} label="Secondary" />
                   <FormControlLabel control={<Switch defaultChecked color="success" />} label="Success" />
                   <FormControlLabel control={<Switch defaultChecked color="error" />} label="Error" />
-                </Grid>
-              </Grid>
+                </Box>
+              </Stack>
             </Paper>
 
             {/* Sliders & Rating */}
@@ -493,8 +478,8 @@ function App() {
               <Typography variant="h5" gutterBottom color="primary">
                 Sliders & Rating
               </Typography>
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
+              <Stack direction={{ xs: 'column', md: 'row' }} spacing={3}>
+                <Box sx={{ flex: 1 }}>
                   <Typography variant="body2" color="text.secondary" gutterBottom>
                     Default Slider
                   </Typography>
@@ -509,8 +494,8 @@ function App() {
                     Secondary Color Slider
                   </Typography>
                   <Slider defaultValue={70} color="secondary" valueLabelDisplay="auto" />
-                </Grid>
-                <Grid item xs={12} md={6}>
+                </Box>
+                <Box sx={{ flex: 1 }}>
                   <Typography variant="body2" color="text.secondary" gutterBottom>
                     Rating Component
                   </Typography>
@@ -533,8 +518,8 @@ function App() {
                     icon={<Favorite fontSize="inherit" />}
                     emptyIcon={<FavoriteBorder fontSize="inherit" />}
                   />
-                </Grid>
-              </Grid>
+                </Box>
+              </Stack>
             </Paper>
           </Stack>
         )}
@@ -547,9 +532,9 @@ function App() {
               <Typography variant="h5" gutterBottom color="primary">
                 Cards & Media
               </Typography>
-              <Grid container spacing={3}>
+              <Stack direction="row" spacing={3} sx={{ flexWrap: 'wrap', gap: 3 }}>
                 {["primary", "secondary", "success", "error", "warning", "info"].map((color) => (
-                  <Grid item xs={12} sm={6} md={4} key={color}>
+                  <Box key={color} sx={{ flex: '1 1 300px', minWidth: '300px' }}>
                     <Card elevation={3}>
                       <CardContent>
                         <Typography variant="h6" color={`${color}.main`} gutterBottom>
@@ -568,9 +553,9 @@ function App() {
                         <Button size="small" color={color as any}>Action</Button>
                       </CardActions>
                     </Card>
-                  </Grid>
+                  </Box>
                 ))}
-              </Grid>
+              </Stack>
             </Paper>
 
             {/* Lists */}
@@ -721,8 +706,8 @@ function App() {
               <Typography variant="h5" gutterBottom color="primary">
                 Progress Indicators
               </Typography>
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
+              <Stack direction={{ xs: 'column', md: 'row' }} spacing={3}>
+                <Box sx={{ flex: 1 }}>
                   <Typography variant="body2" color="text.secondary" gutterBottom>
                     Linear Progress:
                   </Typography>
@@ -733,8 +718,8 @@ function App() {
                     <LinearProgress color="error" variant="determinate" value={75} />
                     <LinearProgress color="warning" variant="buffer" value={60} valueBuffer={80} />
                   </Stack>
-                </Grid>
-                <Grid item xs={12} md={6}>
+                </Box>
+                <Box sx={{ flex: 1 }}>
                   <Typography variant="body2" color="text.secondary" gutterBottom>
                     Circular Progress:
                   </Typography>
@@ -745,8 +730,8 @@ function App() {
                     <CircularProgress color="error" variant="determinate" value={50} />
                     <CircularProgress color="warning" variant="determinate" value={25} />
                   </Stack>
-                </Grid>
-              </Grid>
+                </Box>
+              </Stack>
             </Paper>
 
             {/* Stepper */}
@@ -840,30 +825,138 @@ function App() {
               <Typography variant="h5" gutterBottom color="primary">
                 Current Theme Color Palette
               </Typography>
-              <Grid container spacing={2} sx={{ mt: 1 }}>
+              <Stack direction="row" spacing={2} sx={{ mt: 1, flexWrap: 'wrap', gap: 2 }}>
                 {["primary", "secondary", "success", "error", "warning", "info"].map((color) => (
-                  <Grid item xs={6} sm={4} md={2} key={color}>
-                    <Box
-                      sx={{
-                        bgcolor: `${color}.main`,
-                        color: `${color}.contrastText`,
-                        p: 3,
-                        borderRadius: 2,
-                        textAlign: 'center',
-                        fontWeight: 'bold',
-                        boxShadow: 2,
-                      }}
-                    >
-                      {color.charAt(0).toUpperCase() + color.slice(1)}
-                    </Box>
-                  </Grid>
+                  <Box
+                    key={color}
+                    sx={{
+                      bgcolor: `${color}.main`,
+                      color: `${color}.contrastText`,
+                      p: 3,
+                      borderRadius: 2,
+                      textAlign: 'center',
+                      fontWeight: 'bold',
+                      boxShadow: 2,
+                      flex: '1 1 150px',
+                      minWidth: '120px',
+                    }}
+                  >
+                    {color.charAt(0).toUpperCase() + color.slice(1)}
+                  </Box>
                 ))}
-              </Grid>
+              </Stack>
+            </Paper>
+          </Stack>
+        )}
+
+        {/* Tab Panel 4: Custom Components */}
+        {tabValue === 4 && (
+          <Stack spacing={4}>
+            {/* ProfileCard Showcase */}
+            <Paper elevation={2} sx={{ p: 3 }}>
+              <Typography variant="h5" gutterBottom color="primary">
+                ProfileCard - Composite Component
+              </Typography>
+              <Typography variant="body2" color="text.secondary" paragraph>
+                ProfileCard is a custom component from the library that combines multiple Material-UI components
+                (Card, Avatar, Typography, Chip, Button, etc.) into a reusable profile card.
+              </Typography>
+              
+              <Stack direction="row" spacing={3} sx={{ flexWrap: 'wrap', gap: 3, mt: 3 }}>
+                <ProfileCard
+                  name="Sarah Johnson"
+                  role="Senior Software Engineer"
+                  avatarUrl="https://i.pravatar.cc/150?img=47"
+                  email="sarah.johnson@example.com"
+                  phone="+1 (555) 123-4567"
+                  location="San Francisco, CA"
+                  bio="Passionate about building scalable web applications and mentoring junior developers."
+                  skills={['React', 'TypeScript', 'Node.js', 'AWS']}
+                  onViewProfile={() => alert('View Profile clicked!')}
+                  onMessage={() => alert('Message clicked!')}
+                  onEdit={() => alert('Edit clicked!')}
+                  onDelete={() => alert('Delete clicked!')}
+                />
+                
+                <ProfileCard
+                  name="John Doe"
+                  role="Product Manager"
+                  email="john.doe@example.com"
+                  location="New York, NY"
+                  bio="Leading product strategy and roadmap for innovative solutions."
+                  skills={['Product Strategy', 'Agile', 'UX Design']}
+                  onViewProfile={() => alert('View Profile clicked!')}
+                  onMessage={() => alert('Message clicked!')}
+                />
+                
+                <ProfileCard
+                  name="Emma Wilson"
+                  role="UX/UI Designer"
+                  avatarUrl="https://i.pravatar.cc/150?img=32"
+                  email="emma.wilson@example.com"
+                  phone="+1 (555) 987-6543"
+                  location="Austin, TX"
+                  bio="Creating beautiful and intuitive user experiences."
+                  skills={['Figma', 'Adobe XD', 'User Research', 'Prototyping']}
+                  variant="outlined"
+                  onViewProfile={() => alert('View Profile clicked!')}
+                  onMessage={() => alert('Message clicked!')}
+                />
+              </Stack>
             </Paper>
 
-            {/* Token Test Section */}
+            {/* ProfileCard Variants */}
             <Paper elevation={2} sx={{ p: 3 }}>
-              <TestTokensAndCSS />
+              <Typography variant="h5" gutterBottom color="primary">
+                ProfileCard Variants
+              </Typography>
+              <Typography variant="body2" color="text.secondary" paragraph>
+                Different styles and configurations of the ProfileCard component.
+              </Typography>
+              
+              <Stack direction="row" spacing={3} sx={{ flexWrap: 'wrap', gap: 3, mt: 3 }}>
+                <ProfileCard
+                  name="Michael Chen"
+                  role="Data Scientist"
+                  showActions={false}
+                  showMoreOptions={false}
+                />
+                
+                <ProfileCard
+                  name="David Kim"
+                  role="Full Stack Developer"
+                  email="david.kim@example.com"
+                  location="Seattle, WA"
+                  bio="Building end-to-end solutions with modern technologies."
+                  skills={[
+                    'React',
+                    'Vue.js',
+                    'Angular',
+                    'Node.js',
+                    'Python',
+                    'Django',
+                    'PostgreSQL',
+                    'MongoDB',
+                  ]}
+                  elevation={1}
+                  onViewProfile={() => alert('View Profile clicked!')}
+                  onMessage={() => alert('Message clicked!')}
+                />
+                
+                <ProfileCard
+                  name="Rachel Green"
+                  role="Business Analyst"
+                  avatarUrl="https://i.pravatar.cc/150?img=45"
+                  email="rachel.green@example.com"
+                  phone="+1 (555) 246-8135"
+                  location="Chicago, IL"
+                  bio="Analyzing data to drive business decisions and growth."
+                  skills={['SQL', 'Tableau', 'Excel', 'Business Intelligence']}
+                  elevation={12}
+                  onViewProfile={() => alert('View Profile clicked!')}
+                  onMessage={() => alert('Message clicked!')}
+                />
+              </Stack>
             </Paper>
           </Stack>
         )}

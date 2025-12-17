@@ -11,6 +11,9 @@ export type { ThemeSelectorProps } from './components/ThemeSelector';
 export { ThemeModeToggle } from './components/ThemeModeToggle';
 export type { ThemeModeToggleProps } from './components/ThemeModeToggle';
 
+export { ProfileCard } from './components/ProfileCard';
+export type { ProfileCardProps } from './components/ProfileCard';
+
 // Export themes
 export {
     allThemes, forestDarkTheme, forestLightTheme, oceanDarkTheme,
