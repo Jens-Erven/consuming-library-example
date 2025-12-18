@@ -28,9 +28,11 @@ const generateMuiThemes = async () => {
     const themes = JSON.parse(rawData);
 
     // Get theme names (remove 'theme-' prefix)
-    const themeNames = Object.keys(themes).map(name => name.replace(/^theme-/, ''));
+    const themeNames = Object.keys(themes).map((name) =>
+      name.replace(/^theme-/, "")
+    );
 
-    log(`📦 Found ${themeNames.length} themes: ${themeNames.join(', ')}\n`);
+    log(`📦 Found ${themeNames.length} themes: ${themeNames.join(", ")}\n`);
 
     // Generate the TypeScript file content
     const fileContent = generateThemeFileContent(themeNames);
@@ -41,11 +43,10 @@ const generateMuiThemes = async () => {
     log(`✅ Material-UI theme file generated successfully!`);
     log(`📁 Output: ${outputPath}\n`);
     log(`✨ The following themes are now available:`);
-    themeNames.forEach(theme => {
+    themeNames.forEach((theme) => {
       log(`   • ${theme}LightTheme, ${theme}DarkTheme`);
     });
-    log('');
-
+    log("");
   } catch (err) {
     error("❌ An error occurred while generating Material-UI themes:");
     error(err);
@@ -61,41 +62,58 @@ function generateThemeFileContent(themeNames) {
 
   // Generate imports for light themes
   const lightImports = themeNames
-    .map(theme => `import * as ${theme}Light from '../../design-system/output/theme-${theme}/light/ts/tokens';`)
-    .join('\n');
+    .map(
+      (theme) =>
+        `import * as ${theme}Light from '../../design-system/output/theme-${theme}/light/ts/tokens';`
+    )
+    .join("\n");
 
   // Generate imports for dark themes
   const darkImports = themeNames
-    .map(theme => `import * as ${theme}Dark from '../../design-system/output/theme-${theme}/dark/ts/tokens';`)
-    .join('\n');
+    .map(
+      (theme) =>
+        `import * as ${theme}Dark from '../../design-system/output/theme-${theme}/dark/ts/tokens';`
+    )
+    .join("\n");
 
   // Generate individual theme exports
   const themeExports = themeNames
-    .map(theme => `export const ${theme}LightTheme = createThemeFromTokens(${theme}Light, 'light');
-export const ${theme}DarkTheme = createThemeFromTokens(${theme}Dark, 'dark');`)
-    .join('\n');
+    .map(
+      (
+        theme
+      ) => `export const ${theme}LightTheme = createThemeFromTokens(${theme}Light, 'light');
+export const ${theme}DarkTheme = createThemeFromTokens(${theme}Dark, 'dark');`
+    )
+    .join("\n");
 
   // Generate themes object properties
   const themesObjectProps = themeNames
-    .map(theme => `  ${theme}: {
+    .map(
+      (theme) => `  ${theme}: {
     light: ${theme}LightTheme,
     dark: ${theme}DarkTheme,
-  },`)
-    .join('\n');
+  },`
+    )
+    .join("\n");
 
   // Generate allThemes object properties
   const allThemesProps = themeNames
-    .map(theme => `  '${capitalizeFirst(theme)} Light': ${theme}LightTheme,
-  '${capitalizeFirst(theme)} Dark': ${theme}DarkTheme,`)
-    .join('\n');
+    .map(
+      (theme) => `  '${capitalizeFirst(theme)} Light': ${theme}LightTheme,
+  '${capitalizeFirst(theme)} Dark': ${theme}DarkTheme,`
+    )
+    .join("\n");
 
   // Generate ThemeName type
-  const themeNameType = themeNames.map(t => `'${t}'`).join(' | ');
+  const themeNameType = themeNames.map((t) => `'${t}'`).join(" | ");
 
   // Generate usage examples for documentation
   const themeOptions = themeNames
-    .map(theme => `        <option value="${theme}">${capitalizeFirst(theme)}</option>`)
-    .join('\n');
+    .map(
+      (theme) =>
+        `        <option value="${theme}">${capitalizeFirst(theme)}</option>`
+    )
+    .join("\n");
 
   return `/**
  * Material-UI Theme Configuration
@@ -153,7 +171,7 @@ export const ${theme}DarkTheme = createThemeFromTokens(${theme}Dark, 'dark');`)
  * 
  * 3. FULL THEME SWITCHING - Multiple Themes + Light/Dark
  * -------------------------------------------------------
- * Switch between different theme families (${themeNames.join(', ')}) and modes:
+ * Switch between different theme families (${themeNames.join(", ")}) and modes:
  * 
  * \`\`\`typescript
  * import { ThemeProvider } from '@mui/material/styles';
@@ -240,13 +258,13 @@ ${themeOptions}
  * EXPORTS OVERVIEW:
  * 
  * Individual Theme Objects (for simple static usage):
-${themeNames.map(t => ` * - ${t}LightTheme, ${t}DarkTheme`).join('\n')}
+${themeNames.map((t) => ` * - ${t}LightTheme, ${t}DarkTheme`).join("\n")}
  * 
  * Structured Themes Object (for dynamic theme switching):
-${themeNames.map(t => ` * - themes.${t}.light, themes.${t}.dark`).join('\n')}
+${themeNames.map((t) => ` * - themes.${t}.light, themes.${t}.dark`).join("\n")}
  * 
  * Flat Themes Object (for Storybook and dropdown selectors):
-${themeNames.map(t => ` * - allThemes['${capitalizeFirst(t)} Light'], allThemes['${capitalizeFirst(t)} Dark']`).join('\n')}
+${themeNames.map((t) => ` * - allThemes['${capitalizeFirst(t)} Light'], allThemes['${capitalizeFirst(t)} Dark']`).join("\n")}
  * 
  * TypeScript Types:
  * - ThemeName: ${themeNameType}

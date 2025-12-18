@@ -59,8 +59,8 @@ const generateTailwindThemes = async () => {
  */
 function generateTailwindThemeCSS(themeName, modes) {
   // Remove 'theme-' prefix if present to avoid duplication (e.g., theme-amsterdam -> amsterdam)
-  const cleanThemeName = themeName.replace(/^theme-/, '');
-  
+  const cleanThemeName = themeName.replace(/^theme-/, "");
+
   // Generate light mode variables
   const lightVars = Object.entries(modes.light)
     .map(([key, token]) => {
