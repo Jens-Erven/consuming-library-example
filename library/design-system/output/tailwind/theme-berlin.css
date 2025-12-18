@@ -1,9 +1,9 @@
 /**
- * Tailwind CSS v4 Theme: theme-berlin
+ * Tailwind CSS v4 Theme: berlin
  * Auto-generated from design tokens
  */
 
-.theme-theme-berlin {
+.theme-berlin {
    --primary: #C02D19;
    --primary-contrast: #ffffff;
    --secondary: #3BB0D1;
@@ -22,7 +22,7 @@
    --font-size: 12px;
 }
 
-.theme-theme-berlin.dark {
+.theme-berlin.dark {
    --primary: #C02D19;
    --primary-contrast: #ffffff;
    --secondary: #3BB0D1;

@@ -1,9 +1,9 @@
 /**
- * Tailwind CSS v4 Theme: theme-lisbon
+ * Tailwind CSS v4 Theme: lisbon
  * Auto-generated from design tokens
  */
 
-.theme-theme-lisbon {
+.theme-lisbon {
    --primary: #FA965A;
    --primary-contrast: #ffffff;
    --secondary: #009996;
@@ -22,7 +22,7 @@
    --font-size: 12px;
 }
 
-.theme-theme-lisbon.dark {
+.theme-lisbon.dark {
    --primary: #FA965A;
    --primary-contrast: #ffffff;
    --secondary: #009996;

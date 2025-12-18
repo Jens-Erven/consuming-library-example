@@ -1,9 +1,9 @@
 /**
- * Tailwind CSS v4 Theme: theme-amsterdam
+ * Tailwind CSS v4 Theme: amsterdam
  * Auto-generated from design tokens
  */
 
-.theme-theme-amsterdam {
+.theme-amsterdam {
    --primary: #009996;
    --primary-contrast: #ffffff;
    --secondary: #FAD600;
@@ -22,7 +22,7 @@
    --font-size: 12px;
 }
 
-.theme-theme-amsterdam.dark {
+.theme-amsterdam.dark {
    --primary: #009996;
    --primary-contrast: #ffffff;
    --secondary: #FAD600;

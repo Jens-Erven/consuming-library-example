@@ -58,6 +58,9 @@ const generateTailwindThemes = async () => {
  * Generate Tailwind CSS v4 theme file content with both light and dark modes
  */
 function generateTailwindThemeCSS(themeName, modes) {
+  // Remove 'theme-' prefix if present to avoid duplication (e.g., theme-amsterdam -> amsterdam)
+  const cleanThemeName = themeName.replace(/^theme-/, '');
+  
   // Generate light mode variables
   const lightVars = Object.entries(modes.light)
     .map(([key, token]) => {
@@ -91,15 +94,15 @@ function generateTailwindThemeCSS(themeName, modes) {
     .join("\n");
 
   return `/**
- * Tailwind CSS v4 Theme: ${themeName}
+ * Tailwind CSS v4 Theme: ${cleanThemeName}
  * Auto-generated from design tokens
  */
 
-.theme-${themeName} {
+.theme-${cleanThemeName} {
 ${lightVars}
 }
 
-.theme-${themeName}.dark {
+.theme-${cleanThemeName}.dark {
 ${darkVars}
 }
 `;

@@ -1,5 +1,4 @@
-// Export styles
-import './styles.css';
+
 
 // Export components
 export { ThemeSelector } from './components/ThemeSelector';

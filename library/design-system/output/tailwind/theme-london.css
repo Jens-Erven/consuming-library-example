@@ -1,9 +1,9 @@
 /**
- * Tailwind CSS v4 Theme: theme-london
+ * Tailwind CSS v4 Theme: london
  * Auto-generated from design tokens
  */
 
-.theme-theme-london {
+.theme-london {
    --primary: #686049;
    --primary-contrast: #ffffff;
    --secondary: #70B476;
@@ -22,7 +22,7 @@
    --font-size: 12px;
 }
 
-.theme-theme-london.dark {
+.theme-london.dark {
    --primary: #686049;
    --primary-contrast: #ffffff;
    --secondary: #70B476;

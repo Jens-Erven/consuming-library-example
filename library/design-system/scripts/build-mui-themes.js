@@ -1,4 +1,103 @@
+import { promises as fs } from "node:fs";
+import path from "node:path";
+
+const { log, error } = console;
+
 /**
+ * Generate Material-UI theme file from design tokens
+ * This script automatically creates src/themes/index.ts with all theme configurations
+ */
+const generateMuiThemes = async () => {
+  try {
+    log("🎨 Generating Material-UI theme file...\n");
+
+    const inputPath = "./design-system/output/tokens-flattened.json";
+    const outputPath = "./src/themes/index.ts";
+    const outputDir = path.dirname(outputPath);
+
+    // Create the themes directory if it doesn't exist
+    try {
+      await fs.access(outputDir);
+    } catch {
+      log(`📁 Creating directory: ${outputDir}`);
+      await fs.mkdir(outputDir, { recursive: true });
+    }
+
+    // Read the flattened themes file
+    const rawData = await fs.readFile(inputPath, "utf-8");
+    const themes = JSON.parse(rawData);
+
+    // Get theme names (remove 'theme-' prefix)
+    const themeNames = Object.keys(themes).map(name => name.replace(/^theme-/, ''));
+
+    log(`📦 Found ${themeNames.length} themes: ${themeNames.join(', ')}\n`);
+
+    // Generate the TypeScript file content
+    const fileContent = generateThemeFileContent(themeNames);
+
+    // Write the file
+    await fs.writeFile(outputPath, fileContent, "utf-8");
+
+    log(`✅ Material-UI theme file generated successfully!`);
+    log(`📁 Output: ${outputPath}\n`);
+    log(`✨ The following themes are now available:`);
+    themeNames.forEach(theme => {
+      log(`   • ${theme}LightTheme, ${theme}DarkTheme`);
+    });
+    log('');
+
+  } catch (err) {
+    error("❌ An error occurred while generating Material-UI themes:");
+    error(err);
+    process.exit(1);
+  }
+};
+
+/**
+ * Generate the complete TypeScript file content
+ */
+function generateThemeFileContent(themeNames) {
+  const capitalizeFirst = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
+  // Generate imports for light themes
+  const lightImports = themeNames
+    .map(theme => `import * as ${theme}Light from '../../design-system/output/theme-${theme}/light/ts/tokens';`)
+    .join('\n');
+
+  // Generate imports for dark themes
+  const darkImports = themeNames
+    .map(theme => `import * as ${theme}Dark from '../../design-system/output/theme-${theme}/dark/ts/tokens';`)
+    .join('\n');
+
+  // Generate individual theme exports
+  const themeExports = themeNames
+    .map(theme => `export const ${theme}LightTheme = createThemeFromTokens(${theme}Light, 'light');
+export const ${theme}DarkTheme = createThemeFromTokens(${theme}Dark, 'dark');`)
+    .join('\n');
+
+  // Generate themes object properties
+  const themesObjectProps = themeNames
+    .map(theme => `  ${theme}: {
+    light: ${theme}LightTheme,
+    dark: ${theme}DarkTheme,
+  },`)
+    .join('\n');
+
+  // Generate allThemes object properties
+  const allThemesProps = themeNames
+    .map(theme => `  '${capitalizeFirst(theme)} Light': ${theme}LightTheme,
+  '${capitalizeFirst(theme)} Dark': ${theme}DarkTheme,`)
+    .join('\n');
+
+  // Generate ThemeName type
+  const themeNameType = themeNames.map(t => `'${t}'`).join(' | ');
+
+  // Generate usage examples for documentation
+  const themeOptions = themeNames
+    .map(theme => `        <option value="${theme}">${capitalizeFirst(theme)}</option>`)
+    .join('\n');
+
+  return `/**
  * Material-UI Theme Configuration
  * 
  * This module provides pre-configured Material-UI themes based on design tokens.
@@ -16,24 +115,24 @@
  * -------------------------------------
  * Import a specific theme and wrap your app with Material-UI's ThemeProvider:
  * 
- * ```typescript
+ * \`\`\`typescript
  * import { ThemeProvider } from '@mui/material/styles';
- * import { amsterdamLightTheme } from '@portima/fe-lib';
+ * import { ${themeNames[0]}LightTheme } from '@portima/fe-lib';
  * 
  * function App() {
  *   return (
- *     <ThemeProvider theme={amsterdamLightTheme}>
+ *     <ThemeProvider theme={${themeNames[0]}LightTheme}>
  *       <YourApp />
  *     </ThemeProvider>
  *   );
  * }
- * ```
+ * \`\`\`
  * 
  * 2. DYNAMIC THEME SWITCHING - Light/Dark Mode
  * ---------------------------------------------
- * Use the structured `themes` object to switch between light and dark modes:
+ * Use the structured \`themes\` object to switch between light and dark modes:
  * 
- * ```typescript
+ * \`\`\`typescript
  * import { ThemeProvider } from '@mui/material/styles';
  * import { themes, type ThemeMode } from '@portima/fe-lib';
  * import { useState } from 'react';
@@ -42,7 +141,7 @@
  *   const [mode, setMode] = useState<ThemeMode>('light');
  *   
  *   return (
- *     <ThemeProvider theme={themes.amsterdam[mode]}>
+ *     <ThemeProvider theme={themes.${themeNames[0]}[mode]}>
  *       <button onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}>
  *         Toggle Mode
  *       </button>
@@ -50,45 +149,41 @@
  *     </ThemeProvider>
  *   );
  * }
- * ```
+ * \`\`\`
  * 
  * 3. FULL THEME SWITCHING - Multiple Themes + Light/Dark
  * -------------------------------------------------------
- * Switch between different theme families (amsterdam, barcelona, berlin, lisbon, london) and modes:
+ * Switch between different theme families (${themeNames.join(', ')}) and modes:
  * 
- * ```typescript
+ * \`\`\`typescript
  * import { ThemeProvider } from '@mui/material/styles';
  * import { themes, type ThemeName, type ThemeMode } from '@portima/fe-lib';
  * import { useState } from 'react';
  * 
  * function App() {
- *   const [themeName, setThemeName] = useState<ThemeName>('amsterdam');
+ *   const [themeName, setThemeName] = useState<ThemeName>('${themeNames[0]}');
  *   const [mode, setMode] = useState<ThemeMode>('light');
  *   
  *   return (
  *     <ThemeProvider theme={themes[themeName][mode]}>
  *       <select onChange={(e) => setThemeName(e.target.value as ThemeName)}>
-        <option value="amsterdam">Amsterdam</option>
-        <option value="barcelona">Barcelona</option>
-        <option value="berlin">Berlin</option>
-        <option value="lisbon">Lisbon</option>
-        <option value="london">London</option>
+${themeOptions}
  *       </select>
  *       <YourApp />
  *     </ThemeProvider>
  *   );
  * }
- * ```
+ * \`\`\`
  * 
  * 4. ADVANCED - Extending/Customizing Themes
  * -------------------------------------------
  * Import a base theme and extend it with custom overrides:
  * 
- * ```typescript
+ * \`\`\`typescript
  * import { createTheme, ThemeProvider } from '@mui/material/styles';
- * import { amsterdamLightTheme } from '@portima/fe-lib';
+ * import { ${themeNames[0]}LightTheme } from '@portima/fe-lib';
  * 
- * const customTheme = createTheme(amsterdamLightTheme, {
+ * const customTheme = createTheme(${themeNames[0]}LightTheme, {
  *   components: {
  *     MuiButton: {
  *       styleOverrides: {
@@ -111,18 +206,18 @@
  *     </ThemeProvider>
  *   );
  * }
- * ```
+ * \`\`\`
  * 
  * 5. WITH APP THEME PROVIDER - Recommended Approach
  * --------------------------------------------------
  * Use the provided AppThemeProvider for automatic localStorage persistence and theme management:
  * 
- * ```typescript
+ * \`\`\`typescript
  * import { AppThemeProvider, useAppTheme } from '@portima/fe-lib';
  * 
  * function App() {
  *   return (
- *     <AppThemeProvider defaultTheme="amsterdam" defaultMode="light">
+ *     <AppThemeProvider defaultTheme="${themeNames[0]}" defaultMode="light">
  *       <YourApp />
  *     </AppThemeProvider>
  *   );
@@ -133,58 +228,38 @@
  *   const { themeName, mode, setTheme, toggleMode } = useAppTheme();
  *   return (
  *     <>
- *       <button onClick={() => setTheme('barcelona')}>
+ *       <button onClick={() => setTheme('${themeNames[1] || themeNames[0]}')}>
  *         Switch Theme
  *       </button>
  *       <button onClick={toggleMode}>Toggle Mode</button>
  *     </>
  *   );
  * }
- * ```
+ * \`\`\`
  * 
  * EXPORTS OVERVIEW:
  * 
  * Individual Theme Objects (for simple static usage):
- * - amsterdamLightTheme, amsterdamDarkTheme
- * - barcelonaLightTheme, barcelonaDarkTheme
- * - berlinLightTheme, berlinDarkTheme
- * - lisbonLightTheme, lisbonDarkTheme
- * - londonLightTheme, londonDarkTheme
+${themeNames.map(t => ` * - ${t}LightTheme, ${t}DarkTheme`).join('\n')}
  * 
  * Structured Themes Object (for dynamic theme switching):
- * - themes.amsterdam.light, themes.amsterdam.dark
- * - themes.barcelona.light, themes.barcelona.dark
- * - themes.berlin.light, themes.berlin.dark
- * - themes.lisbon.light, themes.lisbon.dark
- * - themes.london.light, themes.london.dark
+${themeNames.map(t => ` * - themes.${t}.light, themes.${t}.dark`).join('\n')}
  * 
  * Flat Themes Object (for Storybook and dropdown selectors):
- * - allThemes['Amsterdam Light'], allThemes['Amsterdam Dark']
- * - allThemes['Barcelona Light'], allThemes['Barcelona Dark']
- * - allThemes['Berlin Light'], allThemes['Berlin Dark']
- * - allThemes['Lisbon Light'], allThemes['Lisbon Dark']
- * - allThemes['London Light'], allThemes['London Dark']
+${themeNames.map(t => ` * - allThemes['${capitalizeFirst(t)} Light'], allThemes['${capitalizeFirst(t)} Dark']`).join('\n')}
  * 
  * TypeScript Types:
- * - ThemeName: 'amsterdam' | 'barcelona' | 'berlin' | 'lisbon' | 'london'
+ * - ThemeName: ${themeNameType}
  * - ThemeMode: 'light' | 'dark'
  */
 
 import { createTheme, Theme } from '@mui/material/styles';
 
 // Import light themes
-import * as amsterdamLight from '../../design-system/output/theme-amsterdam/light/ts/tokens';
-import * as barcelonaLight from '../../design-system/output/theme-barcelona/light/ts/tokens';
-import * as berlinLight from '../../design-system/output/theme-berlin/light/ts/tokens';
-import * as lisbonLight from '../../design-system/output/theme-lisbon/light/ts/tokens';
-import * as londonLight from '../../design-system/output/theme-london/light/ts/tokens';
+${lightImports}
 
 // Import dark themes
-import * as amsterdamDark from '../../design-system/output/theme-amsterdam/dark/ts/tokens';
-import * as barcelonaDark from '../../design-system/output/theme-barcelona/dark/ts/tokens';
-import * as berlinDark from '../../design-system/output/theme-berlin/dark/ts/tokens';
-import * as lisbonDark from '../../design-system/output/theme-lisbon/dark/ts/tokens';
-import * as londonDark from '../../design-system/output/theme-london/dark/ts/tokens';
+${darkImports}
 
 /**
  * Helper function to create MUI theme from design tokens
@@ -233,42 +308,14 @@ const createThemeFromTokens = (tokens: any, mode: 'light' | 'dark'): Theme => {
 };
 
 // Export individual theme objects for maximum flexibility
-export const amsterdamLightTheme = createThemeFromTokens(amsterdamLight, 'light');
-export const amsterdamDarkTheme = createThemeFromTokens(amsterdamDark, 'dark');
-export const barcelonaLightTheme = createThemeFromTokens(barcelonaLight, 'light');
-export const barcelonaDarkTheme = createThemeFromTokens(barcelonaDark, 'dark');
-export const berlinLightTheme = createThemeFromTokens(berlinLight, 'light');
-export const berlinDarkTheme = createThemeFromTokens(berlinDark, 'dark');
-export const lisbonLightTheme = createThemeFromTokens(lisbonLight, 'light');
-export const lisbonDarkTheme = createThemeFromTokens(lisbonDark, 'dark');
-export const londonLightTheme = createThemeFromTokens(londonLight, 'light');
-export const londonDarkTheme = createThemeFromTokens(londonDark, 'dark');
+${themeExports}
 
 /**
  * Structured themes object organized by theme name
  * Use this for dynamic theme switching: themes[themeName][mode]
  */
 export const themes = {
-  amsterdam: {
-    light: amsterdamLightTheme,
-    dark: amsterdamDarkTheme,
-  },
-  barcelona: {
-    light: barcelonaLightTheme,
-    dark: barcelonaDarkTheme,
-  },
-  berlin: {
-    light: berlinLightTheme,
-    dark: berlinDarkTheme,
-  },
-  lisbon: {
-    light: lisbonLightTheme,
-    dark: lisbonDarkTheme,
-  },
-  london: {
-    light: londonLightTheme,
-    dark: londonDarkTheme,
-  },
+${themesObjectProps}
 };
 
 /**
@@ -276,24 +323,20 @@ export const themes = {
  * Use this for Storybook or dropdown selectors
  */
 export const allThemes = {
-  'Amsterdam Light': amsterdamLightTheme,
-  'Amsterdam Dark': amsterdamDarkTheme,
-  'Barcelona Light': barcelonaLightTheme,
-  'Barcelona Dark': barcelonaDarkTheme,
-  'Berlin Light': berlinLightTheme,
-  'Berlin Dark': berlinDarkTheme,
-  'Lisbon Light': lisbonLightTheme,
-  'Lisbon Dark': lisbonDarkTheme,
-  'London Light': londonLightTheme,
-  'London Dark': londonDarkTheme,
+${allThemesProps}
 };
 
 /**
  * Type representing available theme names
  */
-export type ThemeName = 'amsterdam' | 'barcelona' | 'berlin' | 'lisbon' | 'london';
+export type ThemeName = ${themeNameType};
 
 /**
  * Type representing theme modes
  */
 export type ThemeMode = 'light' | 'dark';
+`;
+}
+
+// Run the generator
+generateMuiThemes();

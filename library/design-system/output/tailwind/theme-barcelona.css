@@ -1,9 +1,9 @@
 /**
- * Tailwind CSS v4 Theme: theme-barcelona
+ * Tailwind CSS v4 Theme: barcelona
  * Auto-generated from design tokens
  */
 
-.theme-theme-barcelona {
+.theme-barcelona {
    --primary: #006E91;
    --primary-contrast: #ffffff;
    --secondary: #F28E02;
@@ -22,7 +22,7 @@
    --font-size: 12px;
 }
 
-.theme-theme-barcelona.dark {
+.theme-barcelona.dark {
    --primary: #006E91;
    --primary-contrast: #ffffff;
    --secondary: #F28E02;

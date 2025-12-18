@@ -12,7 +12,6 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles.css": "./dist/fe-lib.css",
     "./tokens/amsterdam/light": "./design-system/output/theme-amsterdam/light/ts/tokens.ts",
     "./tokens/amsterdam/dark": "./design-system/output/theme-amsterdam/dark/ts/tokens.ts",
     "./tokens/barcelona/light": "./design-system/output/theme-barcelona/light/ts/tokens.ts",
@@ -43,12 +42,13 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "npm run flatten:tokens && npm run build:variables && npm run build:tailwind && tsc && vite build",
+    "build": "npm run flatten:tokens && npm run build:variables && npm run build:tailwind && npm run build:mui-themes && tsc && vite build",
     "preview": "vite preview",
     "prepublishOnly": "npm run build",
     "flatten:tokens": "node ./design-system/scripts/flatten-tokens.js",
     "build:variables": "node ./design-system/scripts/build-multi-themes.js",
     "build:tailwind": "node ./design-system/scripts/build-tailwind-css.js",
+    "build:mui-themes": "node ./design-system/scripts/build-mui-themes.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

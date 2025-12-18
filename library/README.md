@@ -7,9 +7,9 @@ A comprehensive React component library with Material-UI theming, design tokens,
 
 ---
 
-## 🎨 Features
+## Features
 
-- ✅ **3 Themes** - Ocean, Sunset, and Forest with light/dark modes
+- ✅ **5 Themes** - Amsterdam, Barcelona, Berlin, Lisbon, London with light/dark modes
 - ✅ **Material-UI Integration** - Pre-configured MUI themes ready to use
 - ✅ **React Components** - Custom built React Components & Documented with Storybook
 - ✅ **Theme Provider** - Context-based theme management with hooks
@@ -31,7 +31,7 @@ npm install @portima/fe-lib @mui/material @emotion/react @emotion/styled
 
 ### Peer Dependencies
 
-This library requires Material-UI and its dependencies:
+This library requires the following peer dependencies:
 
 - `@mui/material` ^6.0.0
 - `@emotion/react` ^11.0.0
@@ -52,7 +52,7 @@ import {
 
 function App() {
   return (
-    <AppThemeProvider defaultTheme="ocean" defaultMode="light">
+    <AppThemeProvider defaultTheme="amsterdam" defaultMode="light">
       <header>
         <ThemeSelector />
         <ThemeModeToggle />
@@ -63,24 +63,28 @@ function App() {
 }
 ```
 
-That's it! You now have full theme switching with 3 themes and light/dark modes.
+That's it! You now have full theme switching with 5 themes and light/dark modes.
 
 ---
 
 ## 📋 What This Package Provides
 
-### 🎨 **1. Material-UI Themes (6 total)**
+### 🎨 **1. Material-UI Themes (10 total)**
 
 Pre-configured Material-UI theme objects ready to use:
 
 ```typescript
 import {
-  oceanLightTheme,
-  oceanDarkTheme,
-  sunsetLightTheme,
-  sunsetDarkTheme,
-  forestLightTheme,
-  forestDarkTheme,
+  amsterdamLightTheme,
+  amsterdamDarkTheme,
+  barcelonaLightTheme,
+  barcelonaDarkTheme,
+  berlinLightTheme,
+  berlinDarkTheme,
+  lisbonLightTheme,
+  lisbonDarkTheme,
+  londonLightTheme,
+  londonDarkTheme,
   themes, // Structured object
   allThemes, // Flat object
 } from "@portima/fe-lib";
@@ -91,12 +95,6 @@ import {
 - ✅ You're using Material-UI in your app
 - ✅ You want consistent, professional themes
 - ✅ You need light and dark mode support
-
-**Color Palettes:**
-
-- **Ocean** - Blue tones (professional, corporate)
-- **Sunset** - Orange tones (warm, energetic)
-- **Forest** - Green tones (natural, calming)
 
 ---
 
@@ -170,13 +168,13 @@ import { ThemeSelector, ThemeModeToggle } from '@portima/fe-lib';
 Raw token values for custom styling:
 
 ```typescript
-import * as oceanLight from "@portima/fe-lib/tokens/ocean/light";
+import * as amsterdamLight from "@portima/fe-lib/tokens/amsterdam/light";
 
 // Use in styled-components
 const Button = styled.button`
-  background-color: ${oceanLight.primary};
-  color: ${oceanLight.primaryContrast};
-  border-radius: ${oceanLight.borderRadius};
+  background-color: ${amsterdamLight.primary};
+  color: ${amsterdamLight.primaryContrast};
+  border-radius: ${amsterdamLight.borderRadius};
 `;
 ```
 
@@ -200,7 +198,7 @@ CSS custom properties for each theme:
 
 ```typescript
 // Import CSS file
-import '@portima/fe-lib/css/ocean/light';
+import '@portima/fe-lib/css/amsterdam/light';
 
 // Use in CSS
 .my-component {
@@ -219,12 +217,16 @@ import '@portima/fe-lib/css/ocean/light';
 
 **Available imports:**
 
-- `@portima/fe-lib/css/ocean/light`
-- `@portima/fe-lib/css/ocean/dark`
-- `@portima/fe-lib/css/sunset/light`
-- `@portima/fe-lib/css/sunset/dark`
-- `@portima/fe-lib/css/forest/light`
-- `@portima/fe-lib/css/forest/dark`
+- `@portima/fe-lib/css/amsterdam/light`
+- `@portima/fe-lib/css/amsterdam/dark`
+- `@portima/fe-lib/css/barcelona/light`
+- `@portima/fe-lib/css/barcelona/dark`
+- `@portima/fe-lib/css/berlin/light`
+- `@portima/fe-lib/css/berlin/dark`
+- `@portima/fe-lib/css/lisbon/light`
+- `@portima/fe-lib/css/lisbon/dark`
+- `@portima/fe-lib/css/london/light`
+- `@portima/fe-lib/css/london/dark`
 
 ---
 
@@ -237,14 +239,14 @@ Pre-built Tailwind CSS with theme classes:
 import '@portima/fe-lib/css/tailwind';
 
 // Use theme classes in JSX
-<div className="theme-theme-ocean">
+<div className="theme-amsterdam">
   <button className="bg-primary text-primary-contrast">
     Themed Button
   </button>
 </div>
 
 // Toggle dark mode
-<div className="theme-theme-ocean dark">
+<div className="theme-amsterdam dark">
   {/* Uses dark mode colors */}
 </div>
 ```
@@ -257,7 +259,7 @@ import '@portima/fe-lib/css/tailwind';
 
 **Features:**
 
-- Theme classes: `theme-theme-ocean`, `theme-theme-sunset`, `theme-theme-forest`
+- Theme classes: `theme-amsterdam`, `theme-barcelona`, `theme-berlin`, `theme-lisbon`, `theme-london`
 - Dark mode class: `dark`
 - All design tokens as Tailwind utilities
 
@@ -295,13 +297,15 @@ import { Button, MaterialButton } from '@portima/fe-lib';
 │
 ├── design-system/
 │   └── output/
-│       ├── theme-ocean/      # Ocean theme tokens
+│       ├── theme-amsterdam/      # Amsterdam theme tokens
 │       │   ├── light/
 │       │   │   ├── ts/       # TypeScript tokens
 │       │   │   └── css/      # CSS variables
 │       │   └── dark/
-│       ├── theme-sunset/     # Sunset theme tokens
-│       └── theme-forest/     # Forest theme tokens
+│       ├── theme-barcelona/  # Barcelona theme tokens
+│       ├── theme-berlin/     # Berlin theme tokens
+│       ├── theme-lisbon/     # Lisbon theme tokens
+│       ├── theme-london/     # London theme tokens
 │       └── tailwind/
 │           └── app.css       # Tailwind CSS with all themes
 │
@@ -328,7 +332,7 @@ import { Button, MaterialButton } from '@portima/fe-lib';
 ```typescript
 import { AppThemeProvider, ThemeSelector, ThemeModeToggle } from '@portima/fe-lib';
 
-<AppThemeProvider defaultTheme="ocean">
+<AppThemeProvider defaultTheme="amsterdam">
   <Dashboard>
     <Sidebar>
       <ThemeSelector size="small" />
@@ -338,7 +342,7 @@ import { AppThemeProvider, ThemeSelector, ThemeModeToggle } from '@portima/fe-li
 </AppThemeProvider>
 ```
 
-**Why:** Ocean theme provides professional blue tones, pre-built components for quick setup.
+**Why:** Amsterdam theme provides professional styling, pre-built components for quick setup.
 
 ---
 
@@ -352,7 +356,7 @@ import { AppThemeProvider, ThemeSelector, ThemeModeToggle } from '@portima/fe-li
 import { AppThemeProvider, useAppTheme } from '@portima/fe-lib';
 
 <AppThemeProvider
-  defaultTheme="sunset"
+  defaultTheme="barcelona"
   themeExtension={{
     components: {
       MuiButton: {
@@ -369,7 +373,7 @@ import { AppThemeProvider, useAppTheme } from '@portima/fe-lib';
 </AppThemeProvider>
 ```
 
-**Why:** Sunset theme for energetic orange tones, custom controls match brand, easy to extend.
+**Why:** Barcelona theme for vibrant styling, custom controls match brand, easy to extend.
 
 ---
 
@@ -386,14 +390,14 @@ import { IconButton } from '@mui/material';
 function ThemeToggle() {
   const { themeName, setTheme } = useAppTheme();
   return (
-    <IconButton onClick={() => setTheme(themeName === 'forest' ? 'ocean' : 'forest')}>
+    <IconButton onClick={() => setTheme(themeName === 'berlin' ? 'amsterdam' : 'berlin')}>
       {/* Custom icon */}
     </IconButton>
   );
 }
 ```
 
-**Why:** Forest theme provides calming green tones, custom compact controls for mobile.
+**Why:** Berlin theme provides elegant styling, custom compact controls for mobile.
 
 ---
 
@@ -408,10 +412,10 @@ function ThemeToggle() {
 import { themes } from '@portima/fe-lib';
 
 // In Vue/Svelte/Angular apps
-import '@portima/fe-lib/css/ocean/light';
+import '@portima/fe-lib/css/amsterdam/light';
 
 // In plain HTML/CSS
-<link rel="stylesheet" href="node_modules/@portima/fe-lib/css/ocean/light.css">
+<link rel="stylesheet" href="node_modules/@portima/fe-lib/css/amsterdam/light.css">
 ```
 
 **Why:** Framework-agnostic CSS variables, raw tokens for any styling solution.
@@ -458,7 +462,7 @@ import { themes } from '@portima/fe-lib';
 import { ThemeProvider } from '@mui/material/styles';
 
 // Use in Storybook or component development
-<ThemeProvider theme={themes.ocean.light}>
+<ThemeProvider theme={themes.amsterdam.light}>
   <YourComponent />
 </ThemeProvider>
 ```
@@ -484,7 +488,7 @@ import { ThemeProvider } from '@mui/material/styles';
 ```typescript
 interface AppThemeProviderProps {
   children: ReactNode;
-  defaultTheme?: "ocean" | "sunset" | "forest";
+  defaultTheme?: "amsterdam" | "barcelona" | "berlin" | "lisbon" | "london";
   defaultMode?: "light" | "dark";
   enablePersistence?: boolean;
   storageKey?: string;
@@ -498,7 +502,7 @@ interface AppThemeProviderProps {
 
 ```typescript
 interface ThemeContextType {
-  themeName: "ocean" | "sunset" | "forest";
+  themeName: "amsterdam" | "barcelona" | "berlin" | "lisbon" | "london";
   mode: "light" | "dark";
   setTheme: (name: ThemeName) => void;
   setMode: (mode: ThemeMode) => void;
@@ -535,46 +539,31 @@ interface ThemeModeToggleProps {
 
 ## 🎨 Theme Colors Reference
 
-### Ocean Theme
+All five themes (Amsterdam, Barcelona, Berlin, Lisbon, London) include comprehensive color palettes with light and dark modes:
+
+- **Primary & Secondary Colors** - Main brand colors for each theme
+- **Background Colors** - Default and paper backgrounds
+- **Text Colors** - Primary and secondary text
+- **Semantic Colors** - Error, warning, info, success states
+- **Contrast Colors** - Ensures accessibility with proper contrast ratios
+
+Each theme's specific color values can be found in:
+
+- TypeScript tokens: `@portima/fe-lib/tokens/{theme}/{mode}`
+- CSS variables: `@portima/fe-lib/css/{theme}/{mode}`
+- Source JSON: `library/design-system/tokens-export.json`
+
+Example for Amsterdam theme:
 
 ```typescript
 // Light Mode
-primary: "#0077be"; // Deep blue
-secondary: "#00a896"; // Teal
-background: "#f0f8ff"; // Alice blue
+import * as amsterdamLight from "@portima/fe-lib/tokens/amsterdam/light";
+// amsterdamLight.primary = "#009996" (teal)
+// amsterdamLight.secondary = "#FAD600" (yellow)
 
 // Dark Mode
-primary: "#42a5f5"; // Light blue
-secondary: "#26d4c1"; // Light teal
-background: "#0a1929"; // Dark navy
-```
-
-### Sunset Theme
-
-```typescript
-// Light Mode
-primary: "#ff6b35"; // Coral orange
-secondary: "#f7931e"; // Bright orange
-background: "#fff8f0"; // Warm white
-
-// Dark Mode
-primary: "#ff8a65"; // Light coral
-secondary: "#ffb74d"; // Light orange
-background: "#1a1410"; // Dark brown
-```
-
-### Forest Theme
-
-```typescript
-// Light Mode
-primary: "#2d6a4f"; // Forest green
-secondary: "#52b788"; // Mint green
-background: "#f1f8f4"; // Light mint
-
-// Dark Mode
-primary: "#52b788"; // Light green
-secondary: "#74c69d"; // Pale green
-background: "#081c15"; // Dark forest
+import * as amsterdamDark from "@portima/fe-lib/tokens/amsterdam/dark";
+// Optimized colors for dark mode viewing
 ```
 
 ---
@@ -753,16 +742,16 @@ After building, consuming applications can use:
 
 ```typescript
 // 1. TypeScript Tokens
-import * as oceanLight from "@portima/fe-lib/tokens/ocean/light";
+import * as amsterdamLight from "@portima/fe-lib/tokens/amsterdam/light";
 
 // 2. CSS Variables
-import "@portima/fe-lib/css/ocean/light";
+import "@portima/fe-lib/css/amsterdam/light";
 
 // 3. Tailwind CSS
 import "@portima/fe-lib/css/tailwind";
 
 // 4. Material-UI Themes
-import { oceanLightTheme } from "@portima/fe-lib";
+import { amsterdamLightTheme } from "@portima/fe-lib";
 
 // 5. Provider & Components
 import { AppThemeProvider, ThemeSelector } from "@portima/fe-lib";
@@ -799,13 +788,15 @@ library/
 │   ├── tokens-export.json          ← SOURCE (from Figma)
 │   └── output/                     ← GENERATED
 │       ├── tokens-flattened.json
-│       ├── theme-ocean/
+│       ├── theme-amsterdam/
 │       │   ├── light/
 │       │   │   ├── css/tokens.css
 │       │   │   └── ts/tokens.ts + .d.ts
 │       │   └── dark/
-│       ├── theme-sunset/
-│       ├── theme-forest/
+│       ├── theme-barcelona/
+│       ├── theme-berlin/
+│       ├── theme-lisbon/
+│       ├── theme-london/
 │       └── tailwind/app.css
 ├── src/                            ← SOURCE
 │   ├── components/
