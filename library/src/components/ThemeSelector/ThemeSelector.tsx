@@ -74,9 +74,11 @@ export function ThemeSelector({
         label={showLabel ? label : undefined}
         onChange={handleChange}
       >
-        <MenuItem value="ocean">Ocean</MenuItem>
-        <MenuItem value="sunset">Sunset</MenuItem>
-        <MenuItem value="forest">Forest</MenuItem>
+        <MenuItem value="amsterdam">Amsterdam</MenuItem>
+        <MenuItem value="barcelona">Barcelona</MenuItem>
+        <MenuItem value="berlin">Berlin</MenuItem>
+        <MenuItem value="lisbon">Lisbon</MenuItem>
+        <MenuItem value="london">London</MenuItem>
       </Select>
     </FormControl>
   );

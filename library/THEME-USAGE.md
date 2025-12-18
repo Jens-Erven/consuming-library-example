@@ -32,7 +32,7 @@ function App() {
 
 **Done!** You now have:
 
-- ✅ 3 themes (Ocean, Sunset, Forest)
+- ✅ 5 themes (Amsterdam, Barcelona, Berlin, Lisbon, London)
 - ✅ Light/Dark modes
 - ✅ Auto localStorage persistence
 - ✅ System dark mode detection
@@ -75,7 +75,7 @@ import { AppBar, Toolbar, Typography, Stack } from '@mui/material';
 
 function App() {
   return (
-    <AppThemeProvider defaultTheme="ocean" defaultMode="light">
+    <AppThemeProvider defaultTheme="amsterdam" defaultMode="light">
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
@@ -118,7 +118,7 @@ function App() {
 
 ```typescript
 <AppThemeProvider
-  defaultTheme="ocean"              // 'ocean' | 'sunset' | 'forest'
+  defaultTheme="amsterdam"          // 'amsterdam' | 'barcelona' | 'berlin' | 'lisbon' | 'london'
   defaultMode="light"               // 'light' | 'dark'
   enablePersistence={true}          // Save to localStorage
   useSystemPreference={true}        // Detect OS dark mode
@@ -164,22 +164,34 @@ function CustomNavbar() {
       {/* Custom theme buttons */}
       <ButtonGroup>
         <Button
-          variant={themeName === 'ocean' ? 'contained' : 'outlined'}
-          onClick={() => setTheme('ocean')}
+          variant={themeName === 'amsterdam' ? 'contained' : 'outlined'}
+          onClick={() => setTheme('amsterdam')}
         >
-          🌊 Ocean
+          🇳🇱 Amsterdam
         </Button>
         <Button
-          variant={themeName === 'sunset' ? 'contained' : 'outlined'}
-          onClick={() => setTheme('sunset')}
+          variant={themeName === 'barcelona' ? 'contained' : 'outlined'}
+          onClick={() => setTheme('barcelona')}
         >
-          🌅 Sunset
+          🇪� Barcelona
         </Button>
         <Button
-          variant={themeName === 'forest' ? 'contained' : 'outlined'}
-          onClick={() => setTheme('forest')}
+          variant={themeName === 'berlin' ? 'contained' : 'outlined'}
+          onClick={() => setTheme('berlin')}
         >
-          🌲 Forest
+          🇩🇪 Berlin
+        </Button>
+        <Button
+          variant={themeName === 'lisbon' ? 'contained' : 'outlined'}
+          onClick={() => setTheme('lisbon')}
+        >
+          �🇹 Lisbon
+        </Button>
+        <Button
+          variant={themeName === 'london' ? 'contained' : 'outlined'}
+          onClick={() => setTheme('london')}
+        >
+          🇬� London
         </Button>
       </ButtonGroup>
 
@@ -196,7 +208,7 @@ function CustomNavbar() {
 
 ```typescript
 const {
-  themeName, // 'ocean' | 'sunset' | 'forest'
+  themeName, // 'amsterdam' | 'barcelona' | 'berlin' | 'lisbon' | 'london'
   mode, // 'light' | 'dark'
   setTheme, // (name) => void
   setMode, // (mode) => void
@@ -215,9 +227,11 @@ function ThemeTabs() {
   const { themeName, setTheme } = useAppTheme();
   return (
     <Tabs value={themeName} onChange={(e, val) => setTheme(val)}>
-      <Tab label="Ocean" value="ocean" />
-      <Tab label="Sunset" value="sunset" />
-      <Tab label="Forest" value="forest" />
+      <Tab label="Amsterdam" value="amsterdam" />
+      <Tab label="Barcelona" value="barcelona" />
+      <Tab label="Berlin" value="berlin" />
+      <Tab label="Lisbon" value="lisbon" />
+      <Tab label="London" value="london" />
     </Tabs>
   );
 }
@@ -241,12 +255,16 @@ function CombinedDropdown() {
         setMode(themeMode);
       }}
     >
-      <MenuItem value="ocean-light">Ocean Light</MenuItem>
-      <MenuItem value="ocean-dark">Ocean Dark</MenuItem>
-      <MenuItem value="sunset-light">Sunset Light</MenuItem>
-      <MenuItem value="sunset-dark">Sunset Dark</MenuItem>
-      <MenuItem value="forest-light">Forest Light</MenuItem>
-      <MenuItem value="forest-dark">Forest Dark</MenuItem>
+      <MenuItem value="amsterdam-light">Amsterdam Light</MenuItem>
+      <MenuItem value="amsterdam-dark">Amsterdam Dark</MenuItem>
+      <MenuItem value="barcelona-light">Barcelona Light</MenuItem>
+      <MenuItem value="barcelona-dark">Barcelona Dark</MenuItem>
+      <MenuItem value="berlin-light">Berlin Light</MenuItem>
+      <MenuItem value="berlin-dark">Berlin Dark</MenuItem>
+      <MenuItem value="lisbon-light">Lisbon Light</MenuItem>
+      <MenuItem value="lisbon-dark">Lisbon Dark</MenuItem>
+      <MenuItem value="london-light">London Light</MenuItem>
+      <MenuItem value="london-dark">London Dark</MenuItem>
     </Select>
   );
 }

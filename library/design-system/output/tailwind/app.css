@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
 /* Import all theme definitions */
-@import "./theme-ocean.css";
-@import "./theme-sunset.css";
-@import "./theme-forest.css";
+@import "./theme-amsterdam.css";
+@import "./theme-barcelona.css";
+@import "./theme-berlin.css";
+@import "./theme-lisbon.css";
+@import "./theme-london.css";
 
 @custom-variant dark (&:is(.dark *));
 

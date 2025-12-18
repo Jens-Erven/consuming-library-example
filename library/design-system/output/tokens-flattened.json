@@ -1,13 +1,13 @@
 {
-  "theme-ocean": {
+  "theme-amsterdam": {
     "light": {
       "primary": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#0077be",
-        "$collectionName": "theme-ocean"
+        "$value": "#009996",
+        "$collectionName": "theme-amsterdam"
       },
       "primary-contrast": {
         "$scopes": [
@@ -15,55 +15,55 @@
         ],
         "$type": "color",
         "$value": "#ffffff",
-        "$collectionName": "theme-ocean"
+        "$collectionName": "theme-amsterdam"
       },
       "secondary": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#00a896",
-        "$collectionName": "theme-ocean"
+        "$value": "#FAD600",
+        "$collectionName": "theme-amsterdam"
       },
       "secondary-contrast": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#ffffff",
-        "$collectionName": "theme-ocean"
+        "$value": "#000000",
+        "$collectionName": "theme-amsterdam"
       },
       "background-default": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#f0f8ff",
-        "$collectionName": "theme-ocean"
+        "$value": "#ffffff",
+        "$collectionName": "theme-amsterdam"
       },
       "background-paper": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#ffffff",
-        "$collectionName": "theme-ocean"
+        "$value": "#f5f5f5",
+        "$collectionName": "theme-amsterdam"
       },
       "text-primary": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#1a1a1a",
-        "$collectionName": "theme-ocean"
+        "$value": "#000000",
+        "$collectionName": "theme-amsterdam"
       },
       "text-secondary": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#555555",
-        "$collectionName": "theme-ocean"
+        "$value": "#666666",
+        "$collectionName": "theme-amsterdam"
       },
       "error": {
         "$scopes": [
@@ -71,7 +71,7 @@
         ],
         "$type": "color",
         "$value": "#d32f2f",
-        "$collectionName": "theme-ocean"
+        "$collectionName": "theme-amsterdam"
       },
       "warning": {
         "$scopes": [
@@ -79,7 +79,7 @@
         ],
         "$type": "color",
         "$value": "#ed6c02",
-        "$collectionName": "theme-ocean"
+        "$collectionName": "theme-amsterdam"
       },
       "info": {
         "$scopes": [
@@ -87,7 +87,7 @@
         ],
         "$type": "color",
         "$value": "#0288d1",
-        "$collectionName": "theme-ocean"
+        "$collectionName": "theme-amsterdam"
       },
       "success": {
         "$scopes": [
@@ -95,7 +95,7 @@
         ],
         "$type": "color",
         "$value": "#2e7d32",
-        "$collectionName": "theme-ocean"
+        "$collectionName": "theme-amsterdam"
       },
       "spacing-unit": {
         "$scopes": [
@@ -103,15 +103,31 @@
         ],
         "$type": "dimension",
         "$value": 8,
-        "$collectionName": "theme-ocean"
+        "$collectionName": "theme-amsterdam"
       },
       "border-radius": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "dimension",
-        "$value": 8,
-        "$collectionName": "theme-ocean"
+        "$value": 4,
+        "$collectionName": "theme-amsterdam"
+      },
+      "font-family": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "string",
+        "$value": "sans-serif",
+        "$collectionName": "theme-amsterdam"
+      },
+      "font-size": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 12,
+        "$collectionName": "theme-amsterdam"
       }
     },
     "dark": {
@@ -120,24 +136,24 @@
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#42a5f5",
-        "$collectionName": "theme-ocean"
+        "$value": "#009996",
+        "$collectionName": "theme-amsterdam"
       },
       "primary-contrast": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#000000",
-        "$collectionName": "theme-ocean"
+        "$value": "#ffffff",
+        "$collectionName": "theme-amsterdam"
       },
       "secondary": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#26d4c1",
-        "$collectionName": "theme-ocean"
+        "$value": "#FAD600",
+        "$collectionName": "theme-amsterdam"
       },
       "secondary-contrast": {
         "$scopes": [
@@ -145,23 +161,23 @@
         ],
         "$type": "color",
         "$value": "#000000",
-        "$collectionName": "theme-ocean"
+        "$collectionName": "theme-amsterdam"
       },
       "background-default": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#0a1929",
-        "$collectionName": "theme-ocean"
+        "$value": "#121212",
+        "$collectionName": "theme-amsterdam"
       },
       "background-paper": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#132f4c",
-        "$collectionName": "theme-ocean"
+        "$value": "#1e1e1e",
+        "$collectionName": "theme-amsterdam"
       },
       "text-primary": {
         "$scopes": [
@@ -169,15 +185,15 @@
         ],
         "$type": "color",
         "$value": "#ffffff",
-        "$collectionName": "theme-ocean"
+        "$collectionName": "theme-amsterdam"
       },
       "text-secondary": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#b2bac2",
-        "$collectionName": "theme-ocean"
+        "$value": "#b0b0b0",
+        "$collectionName": "theme-amsterdam"
       },
       "error": {
         "$scopes": [
@@ -185,7 +201,7 @@
         ],
         "$type": "color",
         "$value": "#f44336",
-        "$collectionName": "theme-ocean"
+        "$collectionName": "theme-amsterdam"
       },
       "warning": {
         "$scopes": [
@@ -193,7 +209,7 @@
         ],
         "$type": "color",
         "$value": "#ffa726",
-        "$collectionName": "theme-ocean"
+        "$collectionName": "theme-amsterdam"
       },
       "info": {
         "$scopes": [
@@ -201,7 +217,7 @@
         ],
         "$type": "color",
         "$value": "#29b6f6",
-        "$collectionName": "theme-ocean"
+        "$collectionName": "theme-amsterdam"
       },
       "success": {
         "$scopes": [
@@ -209,7 +225,7 @@
         ],
         "$type": "color",
         "$value": "#66bb6a",
-        "$collectionName": "theme-ocean"
+        "$collectionName": "theme-amsterdam"
       },
       "spacing-unit": {
         "$scopes": [
@@ -217,27 +233,43 @@
         ],
         "$type": "dimension",
         "$value": 8,
-        "$collectionName": "theme-ocean"
+        "$collectionName": "theme-amsterdam"
       },
       "border-radius": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "dimension",
-        "$value": 8,
-        "$collectionName": "theme-ocean"
+        "$value": 4,
+        "$collectionName": "theme-amsterdam"
+      },
+      "font-family": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "string",
+        "$value": "sans-serif",
+        "$collectionName": "theme-amsterdam"
+      },
+      "font-size": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 12,
+        "$collectionName": "theme-amsterdam"
       }
     }
   },
-  "theme-sunset": {
+  "theme-barcelona": {
     "light": {
       "primary": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#ff6b35",
-        "$collectionName": "theme-sunset"
+        "$value": "#006E91",
+        "$collectionName": "theme-barcelona"
       },
       "primary-contrast": {
         "$scopes": [
@@ -245,15 +277,15 @@
         ],
         "$type": "color",
         "$value": "#ffffff",
-        "$collectionName": "theme-sunset"
+        "$collectionName": "theme-barcelona"
       },
       "secondary": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#f7931e",
-        "$collectionName": "theme-sunset"
+        "$value": "#F28E02",
+        "$collectionName": "theme-barcelona"
       },
       "secondary-contrast": {
         "$scopes": [
@@ -261,285 +293,55 @@
         ],
         "$type": "color",
         "$value": "#ffffff",
-        "$collectionName": "theme-sunset"
+        "$collectionName": "theme-barcelona"
       },
       "background-default": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#fff8f0",
-        "$collectionName": "theme-sunset"
+        "$value": "#ffffff",
+        "$collectionName": "theme-barcelona"
       },
       "background-paper": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#ffffff",
-        "$collectionName": "theme-sunset"
+        "$value": "#f5f5f5",
+        "$collectionName": "theme-barcelona"
       },
       "text-primary": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#2d1b00",
-        "$collectionName": "theme-sunset"
+        "$value": "#000000",
+        "$collectionName": "theme-barcelona"
       },
       "text-secondary": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#6b4423",
-        "$collectionName": "theme-sunset"
+        "$value": "#666666",
+        "$collectionName": "theme-barcelona"
       },
       "error": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#c62828",
-        "$collectionName": "theme-sunset"
+        "$value": "#d32f2f",
+        "$collectionName": "theme-barcelona"
       },
       "warning": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#ef6c00",
-        "$collectionName": "theme-sunset"
-      },
-      "info": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#0277bd",
-        "$collectionName": "theme-sunset"
-      },
-      "success": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#388e3c",
-        "$collectionName": "theme-sunset"
-      },
-      "spacing-unit": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "dimension",
-        "$value": 8,
-        "$collectionName": "theme-sunset"
-      },
-      "border-radius": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "dimension",
-        "$value": 12,
-        "$collectionName": "theme-sunset"
-      }
-    },
-    "dark": {
-      "primary": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#ff8c61",
-        "$collectionName": "theme-sunset"
-      },
-      "primary-contrast": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#1a0800",
-        "$collectionName": "theme-sunset"
-      },
-      "secondary": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#ffb84d",
-        "$collectionName": "theme-sunset"
-      },
-      "secondary-contrast": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#1a0f00",
-        "$collectionName": "theme-sunset"
-      },
-      "background-default": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#1a0f00",
-        "$collectionName": "theme-sunset"
-      },
-      "background-paper": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#2d1b00",
-        "$collectionName": "theme-sunset"
-      },
-      "text-primary": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#fff8f0",
-        "$collectionName": "theme-sunset"
-      },
-      "text-secondary": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#d4b896",
-        "$collectionName": "theme-sunset"
-      },
-      "error": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#ef5350",
-        "$collectionName": "theme-sunset"
-      },
-      "warning": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#ff9800",
-        "$collectionName": "theme-sunset"
-      },
-      "info": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#03a9f4",
-        "$collectionName": "theme-sunset"
-      },
-      "success": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#4caf50",
-        "$collectionName": "theme-sunset"
-      },
-      "spacing-unit": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "dimension",
-        "$value": 8,
-        "$collectionName": "theme-sunset"
-      },
-      "border-radius": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "dimension",
-        "$value": 12,
-        "$collectionName": "theme-sunset"
-      }
-    }
-  },
-  "theme-forest": {
-    "light": {
-      "primary": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#2d6a4f",
-        "$collectionName": "theme-forest"
-      },
-      "primary-contrast": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#ffffff",
-        "$collectionName": "theme-forest"
-      },
-      "secondary": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#52b788",
-        "$collectionName": "theme-forest"
-      },
-      "secondary-contrast": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#ffffff",
-        "$collectionName": "theme-forest"
-      },
-      "background-default": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#f1f8f4",
-        "$collectionName": "theme-forest"
-      },
-      "background-paper": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#ffffff",
-        "$collectionName": "theme-forest"
-      },
-      "text-primary": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#1b4332",
-        "$collectionName": "theme-forest"
-      },
-      "text-secondary": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#40916c",
-        "$collectionName": "theme-forest"
-      },
-      "error": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#c62828",
-        "$collectionName": "theme-forest"
-      },
-      "warning": {
-        "$scopes": [
-          "ALL_SCOPES"
-        ],
-        "$type": "color",
-        "$value": "#f57c00",
-        "$collectionName": "theme-forest"
+        "$value": "#ed6c02",
+        "$collectionName": "theme-barcelona"
       },
       "info": {
         "$scopes": [
@@ -547,7 +349,7 @@
         ],
         "$type": "color",
         "$value": "#0288d1",
-        "$collectionName": "theme-forest"
+        "$collectionName": "theme-barcelona"
       },
       "success": {
         "$scopes": [
@@ -555,7 +357,7 @@
         ],
         "$type": "color",
         "$value": "#2e7d32",
-        "$collectionName": "theme-forest"
+        "$collectionName": "theme-barcelona"
       },
       "spacing-unit": {
         "$scopes": [
@@ -563,7 +365,7 @@
         ],
         "$type": "dimension",
         "$value": 8,
-        "$collectionName": "theme-forest"
+        "$collectionName": "theme-barcelona"
       },
       "border-radius": {
         "$scopes": [
@@ -571,7 +373,23 @@
         ],
         "$type": "dimension",
         "$value": 4,
-        "$collectionName": "theme-forest"
+        "$collectionName": "theme-barcelona"
+      },
+      "font-family": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "string",
+        "$value": "sans-serif",
+        "$collectionName": "theme-barcelona"
+      },
+      "font-size": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 12,
+        "$collectionName": "theme-barcelona"
       }
     },
     "dark": {
@@ -580,80 +398,80 @@
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#74c69d",
-        "$collectionName": "theme-forest"
+        "$value": "#006E91",
+        "$collectionName": "theme-barcelona"
       },
       "primary-contrast": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#081c15",
-        "$collectionName": "theme-forest"
+        "$value": "#ffffff",
+        "$collectionName": "theme-barcelona"
       },
       "secondary": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#95d5b2",
-        "$collectionName": "theme-forest"
+        "$value": "#F28E02",
+        "$collectionName": "theme-barcelona"
       },
       "secondary-contrast": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#081c15",
-        "$collectionName": "theme-forest"
+        "$value": "#ffffff",
+        "$collectionName": "theme-barcelona"
       },
       "background-default": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#081c15",
-        "$collectionName": "theme-forest"
+        "$value": "#121212",
+        "$collectionName": "theme-barcelona"
       },
       "background-paper": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#1b4332",
-        "$collectionName": "theme-forest"
+        "$value": "#1e1e1e",
+        "$collectionName": "theme-barcelona"
       },
       "text-primary": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#d8f3dc",
-        "$collectionName": "theme-forest"
+        "$value": "#ffffff",
+        "$collectionName": "theme-barcelona"
       },
       "text-secondary": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#95d5b2",
-        "$collectionName": "theme-forest"
+        "$value": "#b0b0b0",
+        "$collectionName": "theme-barcelona"
       },
       "error": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#ef5350",
-        "$collectionName": "theme-forest"
+        "$value": "#f44336",
+        "$collectionName": "theme-barcelona"
       },
       "warning": {
         "$scopes": [
           "ALL_SCOPES"
         ],
         "$type": "color",
-        "$value": "#ff9800",
-        "$collectionName": "theme-forest"
+        "$value": "#ffa726",
+        "$collectionName": "theme-barcelona"
       },
       "info": {
         "$scopes": [
@@ -661,7 +479,7 @@
         ],
         "$type": "color",
         "$value": "#29b6f6",
-        "$collectionName": "theme-forest"
+        "$collectionName": "theme-barcelona"
       },
       "success": {
         "$scopes": [
@@ -669,7 +487,7 @@
         ],
         "$type": "color",
         "$value": "#66bb6a",
-        "$collectionName": "theme-forest"
+        "$collectionName": "theme-barcelona"
       },
       "spacing-unit": {
         "$scopes": [
@@ -677,7 +495,7 @@
         ],
         "$type": "dimension",
         "$value": 8,
-        "$collectionName": "theme-forest"
+        "$collectionName": "theme-barcelona"
       },
       "border-radius": {
         "$scopes": [
@@ -685,7 +503,809 @@
         ],
         "$type": "dimension",
         "$value": 4,
-        "$collectionName": "theme-forest"
+        "$collectionName": "theme-barcelona"
+      },
+      "font-family": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "string",
+        "$value": "sans-serif",
+        "$collectionName": "theme-barcelona"
+      },
+      "font-size": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 12,
+        "$collectionName": "theme-barcelona"
+      }
+    }
+  },
+  "theme-berlin": {
+    "light": {
+      "primary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#C02D19",
+        "$collectionName": "theme-berlin"
+      },
+      "primary-contrast": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-berlin"
+      },
+      "secondary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#3BB0D1",
+        "$collectionName": "theme-berlin"
+      },
+      "secondary-contrast": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-berlin"
+      },
+      "background-default": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-berlin"
+      },
+      "background-paper": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#f5f5f5",
+        "$collectionName": "theme-berlin"
+      },
+      "text-primary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#000000",
+        "$collectionName": "theme-berlin"
+      },
+      "text-secondary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#666666",
+        "$collectionName": "theme-berlin"
+      },
+      "error": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#d32f2f",
+        "$collectionName": "theme-berlin"
+      },
+      "warning": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ed6c02",
+        "$collectionName": "theme-berlin"
+      },
+      "info": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#0288d1",
+        "$collectionName": "theme-berlin"
+      },
+      "success": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#2e7d32",
+        "$collectionName": "theme-berlin"
+      },
+      "spacing-unit": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 8,
+        "$collectionName": "theme-berlin"
+      },
+      "border-radius": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 4,
+        "$collectionName": "theme-berlin"
+      },
+      "font-family": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "string",
+        "$value": "sans-serif",
+        "$collectionName": "theme-berlin"
+      },
+      "font-size": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 12,
+        "$collectionName": "theme-berlin"
+      }
+    },
+    "dark": {
+      "primary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#C02D19",
+        "$collectionName": "theme-berlin"
+      },
+      "primary-contrast": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-berlin"
+      },
+      "secondary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#3BB0D1",
+        "$collectionName": "theme-berlin"
+      },
+      "secondary-contrast": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-berlin"
+      },
+      "background-default": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#121212",
+        "$collectionName": "theme-berlin"
+      },
+      "background-paper": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#1e1e1e",
+        "$collectionName": "theme-berlin"
+      },
+      "text-primary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-berlin"
+      },
+      "text-secondary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#b0b0b0",
+        "$collectionName": "theme-berlin"
+      },
+      "error": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#f44336",
+        "$collectionName": "theme-berlin"
+      },
+      "warning": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffa726",
+        "$collectionName": "theme-berlin"
+      },
+      "info": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#29b6f6",
+        "$collectionName": "theme-berlin"
+      },
+      "success": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#66bb6a",
+        "$collectionName": "theme-berlin"
+      },
+      "spacing-unit": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 8,
+        "$collectionName": "theme-berlin"
+      },
+      "border-radius": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 4,
+        "$collectionName": "theme-berlin"
+      },
+      "font-family": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "string",
+        "$value": "sans-serif",
+        "$collectionName": "theme-berlin"
+      },
+      "font-size": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 12,
+        "$collectionName": "theme-berlin"
+      }
+    }
+  },
+  "theme-lisbon": {
+    "light": {
+      "primary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#FA965A",
+        "$collectionName": "theme-lisbon"
+      },
+      "primary-contrast": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-lisbon"
+      },
+      "secondary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#009996",
+        "$collectionName": "theme-lisbon"
+      },
+      "secondary-contrast": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-lisbon"
+      },
+      "background-default": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-lisbon"
+      },
+      "background-paper": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#f5f5f5",
+        "$collectionName": "theme-lisbon"
+      },
+      "text-primary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#000000",
+        "$collectionName": "theme-lisbon"
+      },
+      "text-secondary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#666666",
+        "$collectionName": "theme-lisbon"
+      },
+      "error": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#d32f2f",
+        "$collectionName": "theme-lisbon"
+      },
+      "warning": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ed6c02",
+        "$collectionName": "theme-lisbon"
+      },
+      "info": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#0288d1",
+        "$collectionName": "theme-lisbon"
+      },
+      "success": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#2e7d32",
+        "$collectionName": "theme-lisbon"
+      },
+      "spacing-unit": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 8,
+        "$collectionName": "theme-lisbon"
+      },
+      "border-radius": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 4,
+        "$collectionName": "theme-lisbon"
+      },
+      "font-family": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "string",
+        "$value": "sans-serif",
+        "$collectionName": "theme-lisbon"
+      },
+      "font-size": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 12,
+        "$collectionName": "theme-lisbon"
+      }
+    },
+    "dark": {
+      "primary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#FA965A",
+        "$collectionName": "theme-lisbon"
+      },
+      "primary-contrast": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-lisbon"
+      },
+      "secondary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#009996",
+        "$collectionName": "theme-lisbon"
+      },
+      "secondary-contrast": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-lisbon"
+      },
+      "background-default": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#121212",
+        "$collectionName": "theme-lisbon"
+      },
+      "background-paper": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#1e1e1e",
+        "$collectionName": "theme-lisbon"
+      },
+      "text-primary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-lisbon"
+      },
+      "text-secondary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#b0b0b0",
+        "$collectionName": "theme-lisbon"
+      },
+      "error": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#f44336",
+        "$collectionName": "theme-lisbon"
+      },
+      "warning": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffa726",
+        "$collectionName": "theme-lisbon"
+      },
+      "info": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#29b6f6",
+        "$collectionName": "theme-lisbon"
+      },
+      "success": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#66bb6a",
+        "$collectionName": "theme-lisbon"
+      },
+      "spacing-unit": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 8,
+        "$collectionName": "theme-lisbon"
+      },
+      "border-radius": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 4,
+        "$collectionName": "theme-lisbon"
+      },
+      "font-family": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "string",
+        "$value": "sans-serif",
+        "$collectionName": "theme-lisbon"
+      },
+      "font-size": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 12,
+        "$collectionName": "theme-lisbon"
+      }
+    }
+  },
+  "theme-london": {
+    "light": {
+      "primary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#686049",
+        "$collectionName": "theme-london"
+      },
+      "primary-contrast": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-london"
+      },
+      "secondary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#70B476",
+        "$collectionName": "theme-london"
+      },
+      "secondary-contrast": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-london"
+      },
+      "background-default": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-london"
+      },
+      "background-paper": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#f5f5f5",
+        "$collectionName": "theme-london"
+      },
+      "text-primary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#000000",
+        "$collectionName": "theme-london"
+      },
+      "text-secondary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#666666",
+        "$collectionName": "theme-london"
+      },
+      "error": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#d32f2f",
+        "$collectionName": "theme-london"
+      },
+      "warning": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ed6c02",
+        "$collectionName": "theme-london"
+      },
+      "info": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#0288d1",
+        "$collectionName": "theme-london"
+      },
+      "success": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#2e7d32",
+        "$collectionName": "theme-london"
+      },
+      "spacing-unit": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 8,
+        "$collectionName": "theme-london"
+      },
+      "border-radius": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 4,
+        "$collectionName": "theme-london"
+      },
+      "font-family": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "string",
+        "$value": "sans-serif",
+        "$collectionName": "theme-london"
+      },
+      "font-size": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 12,
+        "$collectionName": "theme-london"
+      }
+    },
+    "dark": {
+      "primary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#686049",
+        "$collectionName": "theme-london"
+      },
+      "primary-contrast": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-london"
+      },
+      "secondary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#70B476",
+        "$collectionName": "theme-london"
+      },
+      "secondary-contrast": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-london"
+      },
+      "background-default": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#121212",
+        "$collectionName": "theme-london"
+      },
+      "background-paper": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#1e1e1e",
+        "$collectionName": "theme-london"
+      },
+      "text-primary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffffff",
+        "$collectionName": "theme-london"
+      },
+      "text-secondary": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#b0b0b0",
+        "$collectionName": "theme-london"
+      },
+      "error": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#f44336",
+        "$collectionName": "theme-london"
+      },
+      "warning": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#ffa726",
+        "$collectionName": "theme-london"
+      },
+      "info": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#29b6f6",
+        "$collectionName": "theme-london"
+      },
+      "success": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "color",
+        "$value": "#66bb6a",
+        "$collectionName": "theme-london"
+      },
+      "spacing-unit": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 8,
+        "$collectionName": "theme-london"
+      },
+      "border-radius": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 4,
+        "$collectionName": "theme-london"
+      },
+      "font-family": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "string",
+        "$value": "sans-serif",
+        "$collectionName": "theme-london"
+      },
+      "font-size": {
+        "$scopes": [
+          "ALL_SCOPES"
+        ],
+        "$type": "dimension",
+        "$value": 12,
+        "$collectionName": "theme-london"
       }
     }
   }

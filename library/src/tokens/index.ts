@@ -7,12 +7,12 @@
  * 
  * @example TypeScript Tokens
  * ```typescript
- * import * as oceanLight from '@portima/fe-lib/tokens/ocean/light';
+ * import * as amsterdamLight from '@portima/fe-lib/tokens/amsterdam/light';
  * ```
  * 
  * @example CSS Variables
  * ```typescript
- * import '@portima/fe-lib/css/ocean/light';
+ * import '@portima/fe-lib/css/amsterdam/light';
  * ```
  * 
  * See TOKENS.md for complete documentation.
@@ -24,10 +24,14 @@
 
 export type { ThemeMode, ThemeName } from '../themes';
 
-export * as forestDark from '../../design-system/output/theme-forest/dark/ts/tokens';
-export * as forestLight from '../../design-system/output/theme-forest/light/ts/tokens';
-export * as oceanDark from '../../design-system/output/theme-ocean/dark/ts/tokens';
-export * as oceanLight from '../../design-system/output/theme-ocean/light/ts/tokens';
-export * as sunsetDark from '../../design-system/output/theme-sunset/dark/ts/tokens';
-export * as sunsetLight from '../../design-system/output/theme-sunset/light/ts/tokens';
+export * as amsterdamDark from '../../design-system/output/theme-amsterdam/dark/ts/tokens';
+export * as amsterdamLight from '../../design-system/output/theme-amsterdam/light/ts/tokens';
+export * as barcelonaDark from '../../design-system/output/theme-barcelona/dark/ts/tokens';
+export * as barcelonaLight from '../../design-system/output/theme-barcelona/light/ts/tokens';
+export * as berlinDark from '../../design-system/output/theme-berlin/dark/ts/tokens';
+export * as berlinLight from '../../design-system/output/theme-berlin/light/ts/tokens';
+export * as lisbonDark from '../../design-system/output/theme-lisbon/dark/ts/tokens';
+export * as lisbonLight from '../../design-system/output/theme-lisbon/light/ts/tokens';
+export * as londonDark from '../../design-system/output/theme-london/dark/ts/tokens';
+export * as londonLight from '../../design-system/output/theme-london/light/ts/tokens';
 

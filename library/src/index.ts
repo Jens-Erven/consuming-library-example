@@ -2,9 +2,6 @@
 import './styles.css';
 
 // Export components
-export { Button } from './components/Button';
-export type { ButtonProps } from './components/Button';
-
 export { ThemeSelector } from './components/ThemeSelector';
 export type { ThemeSelectorProps } from './components/ThemeSelector';
 
@@ -16,11 +13,25 @@ export type { ProfileCardProps } from './components/ProfileCard';
 
 // Export themes
 export {
-    allThemes, forestDarkTheme, forestLightTheme, oceanDarkTheme,
-    // Individual themes
-    oceanLightTheme, sunsetDarkTheme, sunsetLightTheme,
+    allThemes,
+    // Individual themes - Amsterdam
+    amsterdamDarkTheme,
+    amsterdamLightTheme,
+    // Individual themes - Barcelona
+    barcelonaDarkTheme,
+    barcelonaLightTheme,
+    // Individual themes - Berlin
+    berlinDarkTheme,
+    berlinLightTheme,
+    // Individual themes - Lisbon
+    lisbonDarkTheme,
+    lisbonLightTheme,
+    // Individual themes - London
+    londonDarkTheme,
+    londonLightTheme,
     // Theme collections
-    themes, type ThemeMode,
+    themes,
+    type ThemeMode,
     // Types
     type ThemeName
 } from './themes';

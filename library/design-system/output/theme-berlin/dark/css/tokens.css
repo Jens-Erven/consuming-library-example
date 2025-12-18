@@ -1,0 +1,18 @@
+:root {
+  --primary: #c02d19;
+  --primary-contrast: #ffffff;
+  --secondary: #3bb0d1;
+  --secondary-contrast: #ffffff;
+  --background-default: #121212;
+  --background-paper: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --error: #f44336;
+  --warning: #ffa726;
+  --info: #29b6f6;
+  --success: #66bb6a;
+  --spacing-unit: 0.5rem;
+  --border-radius: 0.25rem;
+  --font-family: sans-serif;
+  --font-size: 0.75rem;
+}

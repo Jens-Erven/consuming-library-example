@@ -14,11 +14,11 @@
  * 
  * ```typescript
  * import { ThemeProvider } from '@mui/material/styles';
- * import { oceanLightTheme } from 'your-library';
+ * import { amsterdamLightTheme } from 'your-library';
  * 
  * function App() {
  *   return (
- *     <ThemeProvider theme={oceanLightTheme}>
+ *     <ThemeProvider theme={amsterdamLightTheme}>
  *       <YourApp />
  *     </ThemeProvider>
  *   );
@@ -38,7 +38,7 @@
  *   const [mode, setMode] = useState<ThemeMode>('light');
  *   
  *   return (
- *     <ThemeProvider theme={themes.ocean[mode]}>
+ *     <ThemeProvider theme={themes.amsterdam[mode]}>
  *       <button onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}>
  *         Toggle Mode
  *       </button>
@@ -50,7 +50,7 @@
  * 
  * 3. FULL THEME SWITCHING - Multiple Themes + Light/Dark
  * -------------------------------------------------------
- * Switch between different theme families (ocean, sunset, forest) and modes:
+ * Switch between different theme families (amsterdam, barcelona, berlin, lisbon, london) and modes:
  * 
  * ```typescript
  * import { ThemeProvider } from '@mui/material/styles';
@@ -58,15 +58,17 @@
  * import { useState } from 'react';
  * 
  * function App() {
- *   const [themeName, setThemeName] = useState<ThemeName>('ocean');
+ *   const [themeName, setThemeName] = useState<ThemeName>('amsterdam');
  *   const [mode, setMode] = useState<ThemeMode>('light');
  *   
  *   return (
  *     <ThemeProvider theme={themes[themeName][mode]}>
  *       <select onChange={(e) => setThemeName(e.target.value as ThemeName)}>
- *         <option value="ocean">Ocean</option>
- *         <option value="sunset">Sunset</option>
- *         <option value="forest">Forest</option>
+ *         <option value="amsterdam">Amsterdam</option>
+ *         <option value="barcelona">Barcelona</option>
+ *         <option value="berlin">Berlin</option>
+ *         <option value="lisbon">Lisbon</option>
+ *         <option value="london">London</option>
  *       </select>
  *       <YourApp />
  *     </ThemeProvider>
@@ -80,9 +82,9 @@
  * 
  * ```typescript
  * import { createTheme, ThemeProvider } from '@mui/material/styles';
- * import { oceanLightTheme } from 'your-library';
+ * import { amsterdamLightTheme } from 'your-library';
  * 
- * const customTheme = createTheme(oceanLightTheme, {
+ * const customTheme = createTheme(amsterdamLightTheme, {
  *   components: {
  *     MuiButton: {
  *       styleOverrides: {
@@ -117,14 +119,14 @@
  * import { themes, type ThemeName, type ThemeMode } from 'your-library';
  * 
  * const ThemeContext = createContext({
- *   themeName: 'ocean' as ThemeName,
+ *   themeName: 'amsterdam' as ThemeName,
  *   mode: 'light' as ThemeMode,
  *   setThemeName: (name: ThemeName) => {},
  *   setMode: (mode: ThemeMode) => {},
  * });
  * 
  * export function AppThemeProvider({ children }) {
- *   const [themeName, setThemeName] = useState<ThemeName>('ocean');
+ *   const [themeName, setThemeName] = useState<ThemeName>('amsterdam');
  *   const [mode, setMode] = useState<ThemeMode>('light');
  *   
  *   return (
@@ -142,34 +144,42 @@
  * EXPORTS OVERVIEW:
  * 
  * Individual Theme Objects (for simple static usage):
- * - oceanLightTheme, oceanDarkTheme
- * - sunsetLightTheme, sunsetDarkTheme
- * - forestLightTheme, forestDarkTheme
+ * - amsterdamLightTheme, amsterdamDarkTheme
+ * - barcelonaLightTheme, barcelonaDarkTheme
+ * - berlinLightTheme, berlinDarkTheme
+ * - lisbonLightTheme, lisbonDarkTheme
+ * - londonLightTheme, londonDarkTheme
  * 
  * Structured Themes Object (for dynamic theme switching):
- * - themes.ocean.light, themes.ocean.dark
- * - themes.sunset.light, themes.sunset.dark
- * - themes.forest.light, themes.forest.dark
+ * - themes.amsterdam.light, themes.amsterdam.dark
+ * - themes.barcelona.light, themes.barcelona.dark
+ * - themes.berlin.light, themes.berlin.dark
+ * - themes.lisbon.light, themes.lisbon.dark
+ * - themes.london.light, themes.london.dark
  * 
  * Flat Themes Object (for Storybook and dropdown selectors):
- * - allThemes['Ocean Light'], allThemes['Ocean Dark'], etc.
+ * - allThemes['Amsterdam Light'], allThemes['Amsterdam Dark'], etc.
  * 
  * TypeScript Types:
- * - ThemeName: 'ocean' | 'sunset' | 'forest'
+ * - ThemeName: 'amsterdam' | 'barcelona' | 'berlin' | 'lisbon' | 'london'
  * - ThemeMode: 'light' | 'dark'
  */
 
 import { createTheme, Theme } from '@mui/material/styles';
 
 // Import light themes
-import * as forestLight from '../../design-system/output/theme-forest/light/ts/tokens';
-import * as oceanLight from '../../design-system/output/theme-ocean/light/ts/tokens';
-import * as sunsetLight from '../../design-system/output/theme-sunset/light/ts/tokens';
+import * as amsterdamLight from '../../design-system/output/theme-amsterdam/light/ts/tokens';
+import * as barcelonaLight from '../../design-system/output/theme-barcelona/light/ts/tokens';
+import * as berlinLight from '../../design-system/output/theme-berlin/light/ts/tokens';
+import * as lisbonLight from '../../design-system/output/theme-lisbon/light/ts/tokens';
+import * as londonLight from '../../design-system/output/theme-london/light/ts/tokens';
 
 // Import dark themes
-import * as forestDark from '../../design-system/output/theme-forest/dark/ts/tokens';
-import * as oceanDark from '../../design-system/output/theme-ocean/dark/ts/tokens';
-import * as sunsetDark from '../../design-system/output/theme-sunset/dark/ts/tokens';
+import * as amsterdamDark from '../../design-system/output/theme-amsterdam/dark/ts/tokens';
+import * as barcelonaDark from '../../design-system/output/theme-barcelona/dark/ts/tokens';
+import * as berlinDark from '../../design-system/output/theme-berlin/dark/ts/tokens';
+import * as lisbonDark from '../../design-system/output/theme-lisbon/dark/ts/tokens';
+import * as londonDark from '../../design-system/output/theme-london/dark/ts/tokens';
 
 // Helper function to create MUI theme from design tokens
 const createThemeFromTokens = (tokens: any, mode: 'light' | 'dark'): Theme => {
@@ -213,39 +223,56 @@ const createThemeFromTokens = (tokens: any, mode: 'light' | 'dark'): Theme => {
 };
 
 // Export individual theme objects for maximum flexibility
-export const oceanLightTheme = createThemeFromTokens(oceanLight, 'light');
-export const oceanDarkTheme = createThemeFromTokens(oceanDark, 'dark');
-export const sunsetLightTheme = createThemeFromTokens(sunsetLight, 'light');
-export const sunsetDarkTheme = createThemeFromTokens(sunsetDark, 'dark');
-export const forestLightTheme = createThemeFromTokens(forestLight, 'light');
-export const forestDarkTheme = createThemeFromTokens(forestDark, 'dark');
+export const amsterdamLightTheme = createThemeFromTokens(amsterdamLight, 'light');
+export const amsterdamDarkTheme = createThemeFromTokens(amsterdamDark, 'dark');
+export const barcelonaLightTheme = createThemeFromTokens(barcelonaLight, 'light');
+export const barcelonaDarkTheme = createThemeFromTokens(barcelonaDark, 'dark');
+export const berlinLightTheme = createThemeFromTokens(berlinLight, 'light');
+export const berlinDarkTheme = createThemeFromTokens(berlinDark, 'dark');
+export const lisbonLightTheme = createThemeFromTokens(lisbonLight, 'light');
+export const lisbonDarkTheme = createThemeFromTokens(lisbonDark, 'dark');
+export const londonLightTheme = createThemeFromTokens(londonLight, 'light');
+export const londonDarkTheme = createThemeFromTokens(londonDark, 'dark');
 
 // Export a themes object for convenience (structured by theme name)
 export const themes = {
-  ocean: {
-    light: oceanLightTheme,
-    dark: oceanDarkTheme,
+  amsterdam: {
+    light: amsterdamLightTheme,
+    dark: amsterdamDarkTheme,
   },
-  sunset: {
-    light: sunsetLightTheme,
-    dark: sunsetDarkTheme,
+  barcelona: {
+    light: barcelonaLightTheme,
+    dark: barcelonaDarkTheme,
   },
-  forest: {
-    light: forestLightTheme,
-    dark: forestDarkTheme,
+  berlin: {
+    light: berlinLightTheme,
+    dark: berlinDarkTheme,
+  },
+  lisbon: {
+    light: lisbonLightTheme,
+    dark: lisbonDarkTheme,
+  },
+  london: {
+    light: londonLightTheme,
+    dark: londonDarkTheme,
   },
 };
 
 // Export all themes as a flat object (for Storybook compatibility)
 export const allThemes = {
-  'Ocean Light': oceanLightTheme,
-  'Ocean Dark': oceanDarkTheme,
-  'Sunset Light': sunsetLightTheme,
-  'Sunset Dark': sunsetDarkTheme,
-  'Forest Light': forestLightTheme,
-  'Forest Dark': forestDarkTheme,
+  'Amsterdam Light': amsterdamLightTheme,
+  'Amsterdam Dark': amsterdamDarkTheme,
+  'Barcelona Light': barcelonaLightTheme,
+  'Barcelona Dark': barcelonaDarkTheme,
+  'Berlin Light': berlinLightTheme,
+  'Berlin Dark': berlinDarkTheme,
+  'Lisbon Light': lisbonLightTheme,
+  'Lisbon Dark': lisbonDarkTheme,
+  'London Light': londonLightTheme,
+  'London Dark': londonDarkTheme,
 };
 
 // Type exports for consumers
-export type ThemeName = 'ocean' | 'sunset' | 'forest';
+export type ThemeName = 'amsterdam' | 'barcelona' | 'berlin' | 'lisbon' | 'london';
 export type ThemeMode = 'light' | 'dark';
+

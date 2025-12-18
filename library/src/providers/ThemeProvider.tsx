@@ -2,7 +2,7 @@
  * Theme Provider Wrapper
  *
  * A convenient wrapper around Material-UI's ThemeProvider that adds:
- * - Built-in theme switching (ocean, sunset, forest)
+ * - Built-in theme switching (amsterdam, barcelona, berlin, lisbon, london)
  * - Light/Dark mode toggle
  * - LocalStorage persistence
  * - System preference detection
@@ -32,7 +32,7 @@ import { themes, type ThemeMode, type ThemeName } from "../themes";
 
 // Context type definition
 interface ThemeContextType {
-  /** Current theme name (ocean, sunset, forest) */
+  /** Current theme name (amsterdam, barcelona, berlin, lisbon, london) */
   themeName: ThemeName;
   /** Current mode (light, dark) */
   mode: ThemeMode;
@@ -51,7 +51,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 interface AppThemeProviderProps {
   /** Child components */
   children: ReactNode;
-  /** Default theme name (default: 'ocean') */
+  /** Default theme name (default: 'amsterdam') */
   defaultTheme?: ThemeName;
   /** Default mode (default: 'light', or system preference if useSystemPreference is true) */
   defaultMode?: ThemeMode;
@@ -84,7 +84,7 @@ const STORAGE_MODE_KEY = "theme-mode";
  *
  * function App() {
  *   return (
- *     <AppThemeProvider defaultTheme="ocean" defaultMode="light">
+ *     <AppThemeProvider defaultTheme="amsterdam" defaultMode="light">
  *       <Header>
  *         <ThemeSelector />
  *         <ThemeModeToggle />
@@ -97,7 +97,7 @@ const STORAGE_MODE_KEY = "theme-mode";
  */
 export function AppThemeProvider({
   children,
-  defaultTheme = "ocean",
+  defaultTheme = "amsterdam",
   defaultMode,
   enablePersistence = true,
   storageKey = "app-theme",
