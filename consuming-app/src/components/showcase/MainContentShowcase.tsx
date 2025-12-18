@@ -23,7 +23,7 @@ import {
 } from ".";
 
 export function MainContentShowcase() {
-  const [tabValue, setTabValue] = useState(0);
+  const [tabValue, setTabValue] = useState<number>(0);
 
   return (
     <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
@@ -41,7 +41,7 @@ export function MainContentShowcase() {
       {/* Hero Section with Alerts */}
       <Paper elevation={3} sx={{ p: 4, mb: 4, bgcolor: "background.paper" }}>
         <Typography variant="h3" component="h1" gutterBottom color="primary">
-          🎨 Complete Material-UI Component Showcase
+          Complete Material-UI Component Showcase
         </Typography>
         <Typography variant="h6" color="text.secondary" paragraph>
           Explore all Material-UI components with live theme switching. Test all

@@ -31,18 +31,23 @@ import {
 import { useState } from "react";
 
 export function InputsFormsShowcase() {
-  const [checkboxChecked, setCheckboxChecked] = useState(true);
-  const [switchChecked, setSwitchChecked] = useState(true);
-  const [radioValue, setRadioValue] = useState("option1");
-  const [sliderValue, setSliderValue] = useState(30);
-  const [selectValue, setSelectValue] = useState("option1");
+  const [checkboxChecked, setCheckboxChecked] = useState<boolean>(true);
+  const [switchChecked, setSwitchChecked] = useState<boolean>(true);
+  const [radioValue, setRadioValue] = useState<string>("option1");
+  const [sliderValue, setSliderValue] = useState<number>(30);
+  const [selectValue, setSelectValue] = useState<string>("option1");
   const [autocompleteValue, setAutocompleteValue] = useState<string | null>(
     null
   );
   const [rating, setRating] = useState<number | null>(4);
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
-  const autocompleteOptions = ["Option 1", "Option 2", "Option 3", "Option 4"];
+  const autocompleteOptions: string[] = [
+    "Option 1",
+    "Option 2",
+    "Option 3",
+    "Option 4",
+  ];
 
   return (
     <Stack spacing={4}>

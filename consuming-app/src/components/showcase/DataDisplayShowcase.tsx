@@ -28,8 +28,16 @@ import {
   Typography,
 } from "@mui/material";
 
+interface tableData {
+  id: number;
+  name: string;
+  category: string;
+  price: string;
+  status: string;
+}
+
 export function DataDisplayShowcase() {
-  const tableData = [
+  const tableData: tableData[] = [
     {
       id: 1,
       name: "Product A",

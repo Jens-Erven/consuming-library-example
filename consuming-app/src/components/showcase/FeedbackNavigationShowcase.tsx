@@ -21,12 +21,17 @@ import {
 import { useState } from "react";
 
 export function FeedbackNavigationShowcase() {
-  const [activeStep, setActiveStep] = useState(0);
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [activeStep, setActiveStep] = useState<number>(0);
+  const [dialogOpen, setDialogOpen] = useState<boolean>(false);
+  const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  const steps = ["Select Theme", "Configure Settings", "Preview", "Apply"];
+  const steps: string[] = [
+    "Select Theme",
+    "Configure Settings",
+    "Preview",
+    "Apply",
+  ];
 
   return (
     <Stack spacing={4}>

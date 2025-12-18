@@ -25,7 +25,7 @@ import {
 import { useState } from "react";
 
 export function ButtonsActionsShowcase() {
-  const [alignment, setAlignment] = useState("left");
+  const [alignment, setAlignment] = useState<string>("left");
 
   return (
     <Stack spacing={4}>
