@@ -7,7 +7,7 @@ const preview: Preview = {
   decorators: [
     withThemeFromJSXProvider<ReactRenderer>({
       themes: themes,
-      defaultTheme: 'Ocean Light',
+      defaultTheme: 'Amsterdam Light',
       Provider: ThemeProvider,
       GlobalStyles: CssBaseline,
     })
